@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import heroImage from '../../images/heroImage.jpg';
+import Stars from '../../images/stars.png';
 
 const Herosection = () => {
   return (
@@ -54,10 +55,16 @@ const Herosection = () => {
           <div class="relative z-10 inline-block pt-11 lg:pt-0">
             
           <img
-                    src={heroImage}
-                    alt="hero"
-                    class="max-w-full lg:ml-auto rounded-l-[20%] rounded-br-[6%]"
+              src={heroImage}
+              alt="hero"
+              class="max-w-full lg:ml-auto rounded-l-[20%] rounded-br-[6%]"
                   />
+          <img 
+          src={Stars} 
+          alt='stars' 
+          className='z-20 w-28 absolute mt-[-105%] right-[-5%] opacity-70 hover:opacity-100'
+          />
+
             <span class="absolute -left-8 -bottom-8 z-[-1]">
               <svg
                 width="93"
