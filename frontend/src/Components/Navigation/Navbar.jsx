@@ -8,7 +8,7 @@ const Navbar = () => {
   console.log(open);
   return (
     <div className='max-w-screen overflow-x-hidden font-poppins'>
-      <nav className='bg-gray-900 fixed px-2 h-[50px] sm:h-auto sm:w-full w-screen z-20 left-0 right-0 top-0 border-b border-gray-400'>
+      <nav className='bg-gray-900 fixed px-2 sm:h-auto sm:w-full w-screen z-20 left-0 right-0 top-0 border-b border-gray-400'>
         {/* desktop nav */}
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:p-4 pb-2">
         <Link to="/" className="flex items-center">
@@ -16,7 +16,8 @@ const Navbar = () => {
               src={Icon}
               alt="icon"
               className="hidden sm:block sm:w-[35px] sm:-h-[35px]"/>
-              <span className='ml-2 mt-2 sm:mt-0 text-white font-semibold text-xl'>Vape Älvsjö</span>
+              <span className='ml-2 mt-2 sm:mt-0 text-white font-semibold text-xl'>
+                Vape Älvsjö</span>
         </Link>
         <div className="flex">
             <ul className="sm:flex justify-center hidden">
@@ -51,6 +52,22 @@ const Navbar = () => {
         </div>
       </div>
         {/* desktop nav end */}
+        <div className={`${open ? null : "hidden"} h-[17rem]`}>
+          <ul>
+            <li className='text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4 pt-6'>
+              <Link to='/'>Home</Link>
+              </li>
+              <li className='text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4'>
+              <Link to='/about'>About</Link>
+              </li>
+              <li className='text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4'>
+              <Link to='/services'>Services</Link>
+              </li>
+              <li className='text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4'>
+              <Link to='/contact'>Contact</Link>
+              </li>
+          </ul>
+        </div>
       </nav>
     </div>
   )
