@@ -1,10 +1,9 @@
 import React from 'react';
+import Navbar from '../../Navigation/Navbar';
 
 const Services = () => {
   return (
-    <div>
-      Services
-    </div>
+    <Navbar/>
   );
 }
 
