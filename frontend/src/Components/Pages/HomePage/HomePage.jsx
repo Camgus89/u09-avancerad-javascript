@@ -1,12 +1,12 @@
 import Navbar from '../../Navigation/Navbar';
+import Herosection from '../../Herosection/Herosection';
+
 
 const HomePage = () => {
   return (
     <>
     <Navbar/> 
-    <div>
-      HomePage
-    </div>
+    <Herosection />
     </>
   )
 }
