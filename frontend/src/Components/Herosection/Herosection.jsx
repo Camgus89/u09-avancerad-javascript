@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import heroImage from '../../images/heroImage.jpg';
-import Stars from '../../images/stars.png';
+// import Stars from '../../images/stars.png';
 import {motion} from 'framer-motion';
 
 const Herosection = () => {
@@ -33,14 +33,15 @@ const Herosection = () => {
             </span>
           </h1>
           <p class="text-white text-sm mb-8 max-w-[480px] sm:text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed 
-            tristique urna in dui vehicula, et condimentum libero suscipit. 
-            Nullam id aliquam metus. Integer laoreet nunc in ligula rhoncus, 
+          Här på VapeHouse Älvsjö erbjuder vi ett brett utbud av e-cigaretter, 
+          skräddarsydda för att passa dina unika preferenser. Vår samling inkluderar 
+          allt från kraftfulla vapes som skapar intensiv smak och massiva ångmoln till 
+          smidiga och diskreta podsystem.
             </p>
           </motion.div>
 
-          <motion.div           v
-          ariants={{
+          <motion.div           
+          variants={{
             visible: { opacity: 1, x: 0 },
             hidden: { opacity: 0, x: -75 },
           }}
@@ -68,7 +69,7 @@ const Herosection = () => {
                   </ul>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
                   variants={{
                     visible: { opacity: 1 },
                     hidden: { opacity: 0 },
@@ -102,7 +103,7 @@ const Herosection = () => {
                       />
                     </div>
                   </div>
-                </motion.div>
+                </motion.div> */}
 
         </div>
       </div>
@@ -126,11 +127,11 @@ const Herosection = () => {
               alt="hero"
               class="max-w-full lg:ml-auto rounded-l-[20%] rounded-br-[6%]"
                   />
-          <img 
+          {/* <img 
           src={Stars} 
           alt='stars' 
           className='z-20 w-28 absolute mt-[-105%] right-[-5%] opacity-70 hover:opacity-100'
-          />
+          /> */}
 
             <span class="absolute -left-8 -bottom-8 z-[-1]">
               <svg
@@ -140,31 +141,31 @@ const Herosection = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <circle cx="2.5" cy="2.5" r="2.5" fill="#3056D3" />
-                <circle cx="2.5" cy="24.5" r="2.5" fill="#3056D3" />
-                <circle cx="2.5" cy="46.5" r="2.5" fill="#3056D3" />
-                <circle cx="2.5" cy="68.5" r="2.5" fill="#3056D3" />
-                <circle cx="2.5" cy="90.5" r="2.5" fill="#3056D3" />
-                <circle cx="24.5" cy="2.5" r="2.5" fill="#3056D3" />
-                <circle cx="24.5" cy="24.5" r="2.5" fill="#3056D3" />
-                <circle cx="24.5" cy="46.5" r="2.5" fill="#3056D3" />
-                <circle cx="24.5" cy="68.5" r="2.5" fill="#3056D3" />
-                <circle cx="24.5" cy="90.5" r="2.5" fill="#3056D3" />
-                <circle cx="46.5" cy="2.5" r="2.5" fill="#3056D3" />
-                <circle cx="46.5" cy="24.5" r="2.5" fill="#3056D3" />
-                <circle cx="46.5" cy="46.5" r="2.5" fill="#3056D3" />
-                <circle cx="46.5" cy="68.5" r="2.5" fill="#3056D3" />
-                <circle cx="46.5" cy="90.5" r="2.5" fill="#3056D3" />
-                <circle cx="68.5" cy="2.5" r="2.5" fill="#3056D3" />
-                <circle cx="68.5" cy="24.5" r="2.5" fill="#3056D3" />
-                <circle cx="68.5" cy="46.5" r="2.5" fill="#3056D3" />
-                <circle cx="68.5" cy="68.5" r="2.5" fill="#3056D3" />
-                <circle cx="68.5" cy="90.5" r="2.5" fill="#3056D3" />
-                <circle cx="90.5" cy="2.5" r="2.5" fill="#3056D3" />
-                <circle cx="90.5" cy="24.5" r="2.5" fill="#3056D3" />
-                <circle cx="90.5" cy="46.5" r="2.5" fill="#3056D3" />
-                <circle cx="90.5" cy="68.5" r="2.5" fill="#3056D3" />
-                <circle cx="90.5" cy="90.5" r="2.5" fill="#3056D3" />
+                <circle cx="2.5" cy="2.5" r="2.5" fill="#7e22ce" />
+                <circle cx="2.5" cy="24.5" r="2.5" fill="#7e22ce" />
+                <circle cx="2.5" cy="46.5" r="2.5" fill="#7e22ce" />
+                <circle cx="2.5" cy="68.5" r="2.5" fill="#7e22ce" />
+                <circle cx="2.5" cy="90.5" r="2.5" fill="#7e22ce" />
+                <circle cx="24.5" cy="2.5" r="2.5" fill="#7e22ce" />
+                <circle cx="24.5" cy="24.5" r="2.5" fill="#7e22ce" />
+                <circle cx="24.5" cy="46.5" r="2.5" fill="#7e22ce" />
+                <circle cx="24.5" cy="68.5" r="2.5" fill="#7e22ce" />
+                <circle cx="24.5" cy="90.5" r="2.5" fill="#7e22ce" />
+                <circle cx="46.5" cy="2.5" r="2.5" fill="#7e22ce" />
+                <circle cx="46.5" cy="24.5" r="2.5" fill="#7e22ce" />
+                <circle cx="46.5" cy="46.5" r="2.5" fill="#7e22ce" />
+                <circle cx="46.5" cy="68.5" r="2.5" fill="#7e22ce" />
+                <circle cx="46.5" cy="90.5" r="2.5" fill="#7e22ce" />
+                <circle cx="68.5" cy="2.5" r="2.5" fill="#7e22ce" />
+                <circle cx="68.5" cy="24.5" r="2.5" fill="#7e22ce" />
+                <circle cx="68.5" cy="46.5" r="2.5" fill="#7e22ce" />
+                <circle cx="68.5" cy="68.5" r="2.5" fill="#7e22ce" />
+                <circle cx="68.5" cy="90.5" r="2.5" fill="#7e22ce" />
+                <circle cx="90.5" cy="2.5" r="2.5" fill="#7e22ce" />
+                <circle cx="90.5" cy="24.5" r="2.5" fill="#7e22ce" />
+                <circle cx="90.5" cy="46.5" r="2.5" fill="#7e22ce" />
+                <circle cx="90.5" cy="68.5" r="2.5" fill="#7e22ce" />
+                <circle cx="90.5" cy="90.5" r="2.5" fill="#7e22ce" />
               </svg>
             </span>
             </motion.div>
