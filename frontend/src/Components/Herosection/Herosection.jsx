@@ -25,11 +25,11 @@ const Herosection = () => {
           animate= "visible"
           transition={{duration: 0.5, delay: 0.25}}
         >
-          <h1 class="text-transparent bg-clip-text bg-gradient-to-r sm:text-8xl text-2xl from-blue-400 to-emerald-600 mb-3  font-bold leading-snug sm:text-[42px] lg:text-[40px] xl:text-[42px]">
+          <h1 class="text-transparent bg-clip-text bg-gradient-to-r sm:text-8xl text-2xl from-purple-900 to-purple-100 mb-3  font-bold leading-snug sm:text-[42px] lg:text-[40px] xl:text-[42px]">
             VapeHouse 
             <br />
             <span className='sm:text-8xl text-6xl'>
-            Älvsjö bla vla vla vla
+            Älvsjö baaaam
             </span>
           </h1>
           <p class="text-white text-sm mb-8 max-w-[480px] sm:text-base">
@@ -52,7 +52,7 @@ const Herosection = () => {
                     <li>
                       <Link
                         to="#"
-                        class="bg-blue-400 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-base font-normal text-white hover:bg-blue-500 sm:px-10 lg:px-8 xl:px-10"
+                        class="bg-purple-700 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-base font-normal text-white hover:bg-purple-500 sm:px-10 lg:px-8 xl:px-10"
                       >
                         Get Started
                       </Link>
@@ -60,7 +60,7 @@ const Herosection = () => {
                     <li>
                       <Link
                         to="#"
-                        class="bg-blue-200/80 ml-6 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-black font-normal hover:bg-blue-200 sm:px-10 lg:px-8 xl:px-10"
+                        class="bg-purple-200/80 ml-6 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-black font-normal hover:bg-purple-200 sm:px-10 lg:px-8 xl:px-10"
                       >
                         Take a look
                       </Link>

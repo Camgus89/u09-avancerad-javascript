@@ -1,6 +1,8 @@
 import Navbar from '../../Navigation/Navbar';
 import Herosection from '../../Herosection/Herosection';
 import Features from '../../../Features/Features';
+import CardComponent from '../../Price/CardComponent';
+
 
 const HomePage = () => {
   return (
@@ -8,6 +10,7 @@ const HomePage = () => {
     <Navbar/> 
     <Herosection />
     <Features />
+    <CardComponent/>
     </>
   )
 }

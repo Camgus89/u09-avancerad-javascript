@@ -24,16 +24,16 @@ const Navbar = () => {
           </Link>
           <div className="flex">
             <ul className="sm:flex justify-center hidden">
-              <li className="p-2 mr-4 text-white hover:text-blue-400 cursor-pointer">
+              <li className="p-2 mr-4 text-white hover:text-purple-500 cursor-pointer">
                 <Link to="/">Home</Link>
               </li>
-              <li className="p-2 mr-4 text-white hover:text-blue-400 cursor-pointer">
+              <li className="p-2 mr-4 text-white hover:text-purple-500 cursor-pointer">
                 <Link to="/about">About</Link>
               </li>
-              <li className="p-2 mr-4 text-white hover:text-blue-400 cursor-pointer">
+              <li className="p-2 mr-4 text-white hover:text-purple-500 cursor-pointer">
                 <Link to="/services">Services</Link>
               </li>
-              <li className="p-2 text-white hover:text-blue-400 cursor-pointer">
+              <li className="p-2 text-white hover:text-purple-500 cursor-pointer">
                 <Link to="/contact">Contact</Link>
               </li>
             </ul>
@@ -41,7 +41,7 @@ const Navbar = () => {
           <div className="flex">
             <button
               type="button"
-              className="bg-blue-600 px-4 py-2 text-white hidden sm:block rounded-xl mr-2 hover:bg-blue-500"
+              className="bg-purple-900 px-4 py-2 text-white hidden sm:block rounded-xl mr-2 hover:bg-purple-500"
             >
               Get Started
             </button>
