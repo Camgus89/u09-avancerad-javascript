@@ -2,7 +2,7 @@ import Navbar from '../../Navigation/Navbar';
 import Herosection from '../../Herosection/Herosection';
 import Features from '../../../Features/Features';
 import CardComponent from '../../Price/CardComponent';
-
+import Products from '../../Products/Products';
 
 const HomePage = () => {
   return (
@@ -11,6 +11,7 @@ const HomePage = () => {
     <Herosection />
     <Features />
     <CardComponent/>
+    <Products/>
     </>
   )
 }
