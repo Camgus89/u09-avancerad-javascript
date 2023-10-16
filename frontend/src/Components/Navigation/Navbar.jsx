@@ -43,7 +43,7 @@ const Navbar = () => {
               type="button"
               className="bg-purple-900 px-4 py-2 text-white hidden sm:block rounded-xl mr-2 hover:bg-purple-500"
             >
-              Get Started
+              Register
             </button>
             <button
               type="button"
