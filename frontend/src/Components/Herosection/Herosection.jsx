@@ -33,12 +33,6 @@ const Herosection = () => {
                       Älvsjö
                     </span>
                   </h1>
-                  {/* <p className="text-white text-sm mb-8 max-w-[480px] sm:text-base">
-                    Här på VapeHouse Älvsjö erbjuder vi ett brett utbud av e-cigaretter, 
-                    skräddarsydda för att passa dina unika preferenser. Vår samling inkluderar 
-                    allt från kraftfulla vapes som skapar intensiv smak och massiva ångmoln till 
-                    smidiga och diskreta podsystem.
-                  </p> */}
                 </motion.div>
               </div>
             </div>

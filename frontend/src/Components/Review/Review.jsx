@@ -21,17 +21,16 @@ const Review = () => {
               <div className="grid items-center gap-4 xl:grid-cols-5">
                 <div className="max-w-2xl mx-auto rounded shadow-md bg-blue-100/10 p-6 my-8 space-y-4 text-center xl:col-span-2 xl:text-left">
                   <h2 className="text-4xl font-bold text-black">
-                    What our costumers have to say
+                    Vad har våra kunder att säga om oss?
                   </h2>
                   <p className="text-black">
-                    Here are some reviews of our costumers and their excperience
-                    with our services and that wee provide!
+                    Några recenssioner från våra kunder säger såhär:
                   </p>
                 </div>
                 <div className="p-6 xl:col-span-3">
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="grid content-center gap-4">
-                      <div className="p-6 rounded shadow-md bg-blue-200/30">
+                      <div className="p-6 rounded shadow-md bg-purple-200/30">
                         <p>
                           I recently used the services of this agency, and I am
                           thrilled with the results. The team went above and
@@ -62,7 +61,7 @@ const Review = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="p-6 rounded shadow-md bg-blue-200/60">
+                      <div className="p-6 rounded shadow-md bg-purple-200/60">
                         <p>
                           I cannot say enough good things about this agency. The
                           level of workmanship they displayed was truly
@@ -99,7 +98,7 @@ const Review = () => {
                       </div>
                     </div>
                     <div className="grid content-center gap-4">
-                      <div className="p-6 rounded shadow-md bg-blue-200/60">
+                      <div className="p-6 rounded shadow-md bg-purple-200/60">
                         <p>
                           I have had the pleasure of working with this agency,
                           and I can confidently say that they are a reliable and
@@ -133,7 +132,7 @@ const Review = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="p-6 rounded shadow-md bg-blue-200/30">
+                      <div className="p-6 rounded shadow-md bg-purple-200/30">
                         <p>
                           I recently engaged this agency for their services, and
                           I am extremely pleased with the outcome. Their
@@ -185,14 +184,13 @@ const Review = () => {
                   initial="hidden"
                   animate={mainControlls}
                   transition={{ duration: 0.5, delay: 0.25 }}
-                  className="max-w-2xl mx-auto rounded shadow-md bg-blue-100/10 p-6 my-8 space-y-4 text-center xl:col-span-2 xl:text-left"
+                  className="max-w-2xl mx-auto rounded shadow-md bg-purple-100/10 p-6 my-8 space-y-4 text-center xl:col-span-2 xl:text-left"
                 >
                   <h2 className="text-4xl font-bold text-black">
-                    What our costumers have to say
+                  Vad har våra kunder att säga om oss?
                   </h2>
                   <p className="text-black">
-                    Here are some reviews of our costumers and their excperience
-                    with our services and that wee provide!
+                  Några recenssioner från våra kunder säger såhär:
                   </p>
                 </motion.div>
                 <div className="p-6 xl:col-span-3">
@@ -207,7 +205,7 @@ const Review = () => {
                         initial="hidden"
                         animate={mainControlls}
                         transition={{ duration: 0.6, delay: 0.15 }}
-                        className="p-6 rounded shadow-md bg-blue-200/30"
+                        className="p-6 rounded shadow-md bg-purple-200/30"
                       >
                         <p>
                           I recently used the services of this agency, and I am
@@ -255,7 +253,7 @@ const Review = () => {
                         initial="hidden"
                         animate={mainControlls}
                         transition={{ duration: 0.6, delay: 0.35 }}
-                        className="p-6 rounded shadow-md bg-blue-200/60"
+                        className="p-6 rounded shadow-md bg-purple-200/60"
                       >
                         <p>
                           I cannot say enough good things about this agency. The
@@ -304,7 +302,7 @@ const Review = () => {
                         initial="hidden"
                         animate={mainControlls}
                         transition={{ duration: 0.7, delay: 0.55 }}
-                        className="p-6 rounded shadow-md bg-blue-200/60"
+                        className="p-6 rounded shadow-md bg-purple-200/60"
                       >
                         <p>
                           I have had the pleasure of working with this agency,
@@ -352,7 +350,7 @@ const Review = () => {
                         initial="hidden"
                         animate={mainControlls}
                         transition={{ duration: 0.8, delay: 0.75 }}
-                        className="p-6 rounded shadow-md bg-blue-200/30"
+                        className="p-6 rounded shadow-md bg-purple-200/30"
                       >
                         <p>
                           I recently engaged this agency for their services, and
