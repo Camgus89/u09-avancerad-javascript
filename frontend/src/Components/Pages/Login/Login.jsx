@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <div>
       <Navbar />
-      <div className="max-w-screen font-poppins overflow-hidden ">
+<div className="max-w-screen font-poppins overflow-hidden ">
 <section class="relative z-10 bg-gradient-to-br from-purple-100  py-20  sm:px-20 sm:py-40">
   <div class="container mx-auto">
     <div class="-mx-4 flex flex-wrap">
@@ -15,13 +15,7 @@ const Login = () => {
           class="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]"
         >
           <div class="mb-10 text-center md:mb-16">
-            <a
-              href="#"
-              alt="#"
-              className="mx-auto inline-block max-w-[160px]"
-            >
               <h1 className='text-black mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]'>Login</h1>  
-            </a>
           </div>
           <form>
             <div class="mb-6">
