@@ -26,12 +26,12 @@ const Products = () => {
                 to="#"
                 class="text-dark hover:text-primary mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
               >
-                The ultimate UX and UI guide to card design
+                N One Engångs Vape
               </Link>
             </h3>
             <p class="text-body-color mb-7 text-base leading-relaxed">
-              Lorem ipsum dolor sit amet pretium consectetur adipiscing elit.
-              Lorem consectetur adipiscing elit.
+            N One Engångs Vapes / Disposables finns nu tillgängliga i 21 
+            olika smaker och har genomgått en betydande uppdatering. 
             </p>
             <Link
                 to="#"

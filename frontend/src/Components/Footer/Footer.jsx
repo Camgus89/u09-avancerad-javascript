@@ -52,10 +52,7 @@ const Footer = () => {
                 <span className='font-bold'>Mån-fre</span> 10:00-18:00
               </li>
               <li className="py-2 text-sm cursor-pointer font-semibold">
-                Lördag 10:00-17:00
-              </li>
-              <li className="py-2 text-sm cursor-pointer font-semibold">
-                Söndag 10:00-16:00
+                Lör-sön 10:00-17:00
               </li>
             </ul>
           </div>

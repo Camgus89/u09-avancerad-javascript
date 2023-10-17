@@ -17,8 +17,8 @@ const About = () => {
     <div>
       <Navbar />
       <div className="max-w-screen overflow-hidden font-poppins">
-        <div className="sm:h-screen h-[80rem] -mb-20 sm:mb-0 bg-white pt-20">
-          <div className="mt-20">
+        <div className="sm:h-screen h-[80rem] -mb-80 sm:mb-0 bg-white pt-20">
+          <div className="mt-5">
             <motion.div
               ref={ref}
               variants={{
@@ -39,7 +39,7 @@ const About = () => {
             Älvsjövägen 4,<br/>
             125 34 Älvsjö
           </p>
-            <div className="flex justify-center mt-20" id="maps">
+            <div className="flex justify-center mt-10" id="maps">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2038.2609867573071!2d18.00339407737451!3d59.27849491508851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77f7c4659a1b%3A0xd2355a7ef0f0b1bd!2zw4RsdnNqw7YgYmlsdmVya3N0YWQ!5e0!3m2!1ssv!2sse!4v1697525167643!5m2!1ssv!2sse"
               allowfullscreen=""

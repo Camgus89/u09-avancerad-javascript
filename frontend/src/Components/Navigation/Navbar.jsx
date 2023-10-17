@@ -3,6 +3,7 @@ import Icon from "../../images/level.png";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import profileImage from '../../images/profile.png'
+import {FaShoppingBasket, FaRegHeart} from 'react-icons/fa'
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -30,9 +31,6 @@ const Navbar = () => {
               <li className="p-2 mr-4 text-white hover:text-purple-500 cursor-pointer">
                 <Link to="/about">Hitta oss</Link>
               </li>
-              <li className="p-2 mr-4 text-white hover:text-purple-500 cursor-pointer">
-                <Link to="/services">Services</Link>
-              </li>
               <li className="p-2 text-white hover:text-purple-500 cursor-pointer">
                 <Link to="/contact">Kontakta oss</Link>
               </li>
@@ -51,8 +49,14 @@ const Navbar = () => {
             >
               Login
             </button>
+            <button>
+            <FaRegHeart size={25} className="mt-2 mr-3 text-white" />
+            </button>
+            <button>
+            <FaShoppingBasket size={25} className="mt-2 mr-3 text-white" />
+            </button>
             <button onClick={() => setOpen(!open)} className="sm:hidden block">
-              <GiHamburgerMenu size={30} className="mt-2 mr-2 text-white/70" />
+              <GiHamburgerMenu size={30} className="mt-2 mr-2 text-purple-400" />
             </button>
           </div>
         </div>
@@ -61,16 +65,13 @@ const Navbar = () => {
         <div className={`${open ? null : "hidden"} h-[19rem]`}>
           <ul>
             <li className="text-white hover:text-purple-400 font-semibold pl-8 cursor-pointer pb-4 pt-6">
-              <Link to="/">Home</Link>
+              <Link to="/">Produkter</Link>
             </li>
             <li className="text-white hover:text-purple-400 font-semibold pl-8 cursor-pointer pb-4">
-              <Link to="/about">About</Link>
+              <Link to="/about">Hitta oss</Link>
             </li>
             <li className="text-white hover:text-purple-400 font-semibold pl-8 cursor-pointer pb-4">
-              <Link to="/services">Services</Link>
-            </li>
-            <li className="text-white hover:text-purple-400 font-semibold pl-8 cursor-pointer pb-4">
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">Kontakta</Link>
             </li>
           </ul>
           {/* profile section */}
