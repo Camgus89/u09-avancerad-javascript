@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { useState } from 'react'
 import Navbar from "../../Navigation/Navbar";
 import Footer from "../../Footer/Footer";
@@ -11,6 +12,7 @@ const Login = () => {
 
 const loginUser = (e) => {
   e.preventDefault()
+  axios.get('/')
 }
 
   return (
