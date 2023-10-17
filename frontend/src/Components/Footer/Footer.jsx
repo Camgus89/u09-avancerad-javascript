@@ -1,5 +1,6 @@
 import React from 'react'
-import {FaFacebookSquare, FaInstagram, FaTwitterSquare, FaDribbbleSquare, FaGithubSquare} from 'react-icons/fa'
+import {FaFacebookSquare, FaInstagram, FaTwitterSquare, FaDribbbleSquare, FaGithubSquare, FaApplePay} from 'react-icons/fa'
+
 
 const Footer = () => {
   return (
@@ -11,11 +12,13 @@ const Footer = () => {
             VapeHouse Älvsjö
           </h1>
           <p className="py-4">
-            Welcome to LevelUp Solutions, where we transform raw information
-            into actionable insights. With cutting-edge technology and a team of
-            skilled analysts, we specialize in deciphering complex data sets to
-            uncover valuable patterns and trends with which wee take your
-            business to the Next Level.
+          Här på VapeHouse Älvsjö erbjuder vi ett brett utbud av e-cigaretter, 
+          skräddarsydda för att passa dina unika preferenser. Vår samling inkluderar 
+          allt från kraftfulla vapes som skapar intensiv smak och massiva ångmoln till 
+          smidiga och diskreta podsystem.
+          </p>
+          <p className="py-4 text-purple-400">
+          FÖLJ OSS
           </p>
           <div className="flex md:w-[75%] justify-between my-6 text-purple-400">
             {/* social media icons */}
@@ -28,11 +31,8 @@ const Footer = () => {
         </div>
         <div className="text-white sm:w-[900px] sm:ml-[18%] sm:mr-[12%] sm:pt-0">
           <div>
-            <h1 className="sm:w-[30rem] md:text-4xl sm:text-3xl text-center text-2xl font-bold py-2">
-              Want tips & Tricks to optimize your Work flow?
-            </h1>
-            <p className=" text-center pb-4">
-              Sign up to our newsletter and stay up to date.
+            <p className="sm:w-[30rem] md:text-4xl sm:text-3xl text-center text-2xl font-bold py-2">
+            Prenumerera på vårt nyhetsbrev
             </p>
           </div>
           <div className="my-4">
@@ -40,10 +40,10 @@ const Footer = () => {
               <input
                 className="placeholder:pl-2 flex sm:mr-[-50px] h-10 sm:w-[50%]  sm:h-[35px] mx-auto rounded-md text-black"
                 type="email"
-                placeholder="Enter Your E-Mail"
+                placeholder="Email"
               />
-              <button className="bg-purple-400 mx-auto w-28 hover:bg-blue-500 rounded-md font-medium">
-                Sign UP
+              <button className="bg-purple-400 mx-auto w-28 hover:bg-purple-500 rounded-md font-medium">
+              Prenumerera
               </button>
             </div>
             <p className="text-sm mx-10 flex-col text-center pt-4">
@@ -59,7 +59,7 @@ const Footer = () => {
       <div className="sm:mx-auto pt-10 pb-8 sm:grid flex-row lg:grid-cols-3 w-screen gap-8 text-gray-300 bg-gray-800 ">
         <div className="lg:col-span-3 sm:mr-20  flex justify-between max-w-screen sm:ml-20 ml-[12px] mb-4 sm:mb-0 ">
           <div className="pr-4">
-            <h6 className="font-medium text-purple-400">Butikens öppet tider</h6>
+            <h6 className="font-medium text-purple-400">BUTIKENS ÖPPETTIDER</h6>
             <ul>
               <li className="py-2 text-sm cursor-pointer font-semibold">
                 <span className='font-bold'>Mån-fre</span> 10:00-18:00
@@ -73,22 +73,16 @@ const Footer = () => {
             </ul>
           </div>
           <div className="pr-4">
-            <h6 className="font-medium text-purple-400">Hitta till oss</h6>
+            <h6 className="font-medium text-purple-400">HITTA OSS</h6>
             <ul>
               <li className="py-2 text-sm cursor-pointer font-semibold">
-                Pricing
+              Älvsjövägen 4,
+              125 34 Älvsjö
               </li>
-              <li className="py-2 text-sm cursor-pointer font-semibold">
-                Documentation
-              </li>
-              <li className="py-2 text-sm cursor-pointer font-semibold">
-                Guides
-              </li>
-              <li className="py-2 text-sm cursor-pointer font-semibold">API</li>
             </ul>
           </div>
           <div className="pr-4">
-            <h6 className="font-medium text-purple-400">Company</h6>
+            <h6 className="font-medium text-purple-400">INFORMATION</h6>
             <ul>
               <li className="py-2 text-sm cursor-pointer font-semibold">
                 About
@@ -99,20 +93,25 @@ const Footer = () => {
               <li className="py-2 text-sm cursor-pointer font-semibold">
                 Jobs
               </li>
-              <li className="py-2 text-sm cursor-pointer font-semibold">
-                Careers
-              </li>
-              <li className="py-2 text-sm cursor-pointer font-semibold">
-                Press
-              </li>
             </ul>
           </div>
           <div className="pr-4">
+            <h6 className="font-medium text-purple-400">BETALNING</h6>
+            <ul>
+              <li className="py-2 text-sm cursor-pointer font-semibold">
+              <FaApplePay size={30} className="cursor-pointer " />
+              </li>
+              <li className="py-2 text-sm cursor-pointer font-semibold">
+              Kort
+              </li>
+              <li className="py-2 text-sm cursor-pointer font-semibold">Swish</li>
+            </ul>
           </div>
         </div>
         <div className="w-[310%] h-[2px] bg-gradient-to-r from-purple-800 to-violet-200"></div>
         <p className='pt-4 text-gray-200/40 text-sm flex justify-center text-center'>All Rights Reserved 2023 - VapeHouse Älvsjö</p>
       </div>
+      
       {/* footer bottom section with links */}
       <div></div>
       {/* footer bottom section with links end */}
