@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import Navbar from "../../Navigation/Navbar";
+import Footer from "../../Footer/Footer";
 
 const Register = () => {
   return (
     <div>
-      Register
+      <Navbar />
+      
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;

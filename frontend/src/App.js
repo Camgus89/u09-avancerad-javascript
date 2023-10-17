@@ -5,6 +5,8 @@ import HomePage from './Components/Pages/HomePage/HomePage';
 import About from './Components/Pages/About/About';
 import Services from './Components/Pages/Services/Services';
 import Contact from './Components/Pages/Contact/Contact';
+import Login from './Components/Pages/Login/Login';
+import Register from './Components/Pages/Register/Register';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/services' element={<Services/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
       </Routes>
     </BrowserRouter>
   );

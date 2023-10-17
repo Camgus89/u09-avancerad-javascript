@@ -8,6 +8,7 @@ import {FaShoppingBasket, FaRegHeart} from 'react-icons/fa'
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   console.log(open);
+  
   return (
     <div className="max-w-screen overflow-x-hidden font-poppins">
       <nav className="bg-black fixed px-2  sm:h-auto sm:w-full w-screen z-20 left-0 right-0 top-0 border-b border-gray-400">
@@ -41,13 +42,13 @@ const Navbar = () => {
               type="button"
               className="bg-purple-900 px-4 py-2 text-white hidden sm:block rounded-xl mr-2 hover:bg-purple-500"
             >
-              Register
+              <Link to="/register">Register</Link>
             </button>
             <button
               type="button"
               className="hidden sm:block text-white border font-medium rounded-lg ml-2 text-sm px-4 hover:bg-blue-300/10 mr-4"
             >
-              Login
+              <Link to="/login">Login</Link>
             </button>
             <button>
             <FaRegHeart size={25} className="mt-2 mr-3 text-white" />
