@@ -25,16 +25,16 @@ const Navbar = () => {
           <div className="flex">
             <ul className="sm:flex justify-center hidden">
               <li className="p-2 mr-4 text-white hover:text-purple-500 cursor-pointer">
-                <Link to="/">Home</Link>
+                <Link to="/">Start</Link>
               </li>
               <li className="p-2 mr-4 text-white hover:text-purple-500 cursor-pointer">
-                <Link to="/about">About</Link>
+                <Link to="/about">Hitta oss</Link>
               </li>
               <li className="p-2 mr-4 text-white hover:text-purple-500 cursor-pointer">
                 <Link to="/services">Services</Link>
               </li>
               <li className="p-2 text-white hover:text-purple-500 cursor-pointer">
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact">Kontakta oss</Link>
               </li>
             </ul>
           </div>
@@ -60,16 +60,16 @@ const Navbar = () => {
         {/* desktop nav end */}
         <div className={`${open ? null : "hidden"} h-[19rem]`}>
           <ul>
-            <li className="text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4 pt-6">
+            <li className="text-white hover:text-purple-400 font-semibold pl-8 cursor-pointer pb-4 pt-6">
               <Link to="/">Home</Link>
             </li>
-            <li className="text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4">
+            <li className="text-white hover:text-purple-400 font-semibold pl-8 cursor-pointer pb-4">
               <Link to="/about">About</Link>
             </li>
-            <li className="text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4">
+            <li className="text-white hover:text-purple-400 font-semibold pl-8 cursor-pointer pb-4">
               <Link to="/services">Services</Link>
             </li>
-            <li className="text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4">
+            <li className="text-white hover:text-purple-400 font-semibold pl-8 cursor-pointer pb-4">
               <Link to="/contact">Contact</Link>
             </li>
           </ul>

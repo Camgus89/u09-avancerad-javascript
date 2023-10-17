@@ -14,11 +14,11 @@ const CallToAction = () => {
     }, [isInView])
   return (
     <div>
-      <div className="w-[70%]  h-[2px] bg-gradient-to-r from-blue-400 to-violet-500"></div>
+      <div className="w-[70%]  h-[2px] bg-gradient-to-r from-purple-400 to-violet-500"></div>
       <>
         <section class="py-20 lg:py-[120px] bg-gray-100/50 font-poppins">
           <div class="container mx-auto">
-            <div class="bg-blue-800 relative z-10 sm:-mt-10 sm:-mb-10 overflow-x-hidden rounded py-12 px-8 md:p-[70px]">
+            <div class="bg-purple-800 relative z-10 sm:-mt-10 sm:-mb-10 overflow-x-hidden rounded py-12 px-8 md:p-[70px]">
               <div class="-mx-4 flex flex-wrap items-center">
                 <motion.div
                   ref={ref}
@@ -31,14 +31,11 @@ const CallToAction = () => {
                   transition={{ duration: 0.4, delay: 0.2 }}
                   class="w-full px-4 lg:w-1/2"
                 >
-                  <span class="mb-2 text-base font-semibold text-white">
-                    Find the perfect team to realise your business Gols!
-                  </span>
                   <h2 class="mb-6 text-3xl font-bold leading-tight text-white sm:mb-8 sm:text-[38px] lg:mb-0">
-                    Get started Today and let us <br class="xs:block hidden" />
-                    Take Care of the{" "}
-                    <span className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-                      Rest!
+                    VapeHouse <br class="xs:block hidden" />
+                    {" "}
+                    <span className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-purple-100">
+                      Stockholm
                     </span>
                   </h2>
                 </motion.div>
@@ -57,9 +54,9 @@ const CallToAction = () => {
                       {" "}
                       <button
                         href="#"
-                        class="hover:bg-blue-500 my-1 mr-4 inline-block rounded bg-white bg-opacity-[15%] py-4 px-6 text-base font-medium text-white transition hover:bg-opacity-100 md:px-9 lg:px-6 xl:px-9"
+                        class="hover:bg-purple-500 my-1 mr-4 inline-block rounded bg-white bg-opacity-[15%] py-4 px-6 text-base font-medium text-white transition hover:bg-opacity-100 md:px-9 lg:px-6 xl:px-9"
                       >
-                        Talk to a Agent
+                        Register
                       </button>
                     </motion.div>
                     <motion.div
@@ -75,9 +72,9 @@ const CallToAction = () => {
                       {" "}
                       <button
                         href="#"
-                        class="my-1 inline-block rounded bg-[#1c9b7b] py-4 px-6 text-base font-medium text-white transition hover:bg-opacity-90 md:px-9 lg:px-6 xl:px-9"
+                        class="my-1 inline-block rounded hover:bg-purple-500 bg-purple-400 py-4 px-6 text-base font-medium text-white transition hover:bg-opacity-90 md:px-9 lg:px-6 xl:px-9"
                       >
-                        Get Started
+                        Login
                       </button>
                     </motion.div>
                   </div>
