@@ -44,8 +44,7 @@ const Login = () => {
           <ul class="-mx-2 mb-12 flex justify-between">
             <li class="w-full px-2">
               <a
-                href="#"
-                alt="#"
+                href="/github"
                 class="flex h-11 items-center justify-center rounded-md bg-purple-300 hover:bg-opacity-90"
               >
                 <svg
@@ -64,7 +63,7 @@ const Login = () => {
             </li>
             <li class="w-full px-2">
               <a
-                href=""
+                href="/twitter"
                 class="flex h-11 items-center justify-center rounded-md bg-purple-300 hover:bg-opacity-90"
               >
                 <svg
@@ -83,7 +82,7 @@ const Login = () => {
             </li>
             <li class="w-full px-2">
               <a
-                href="#"
+                href="/google"
                 class="flex h-11 items-center justify-center rounded-md bg-purple-300 hover:bg-opacity-90"
               >
                 <svg
@@ -102,14 +101,14 @@ const Login = () => {
             </li>
           </ul>
           <a
-            href="#"
+            href="/"
             class="mb-2 inline-block text-base text-[#adadad] hover:text-purple-800 hover:underline"
           >
             Glömt lösenord?
           </a>
           <p class="text-base text-[#adadad]">
             <span class="pr-0.5">Inte medlem? </span>
-            <a href="#" 
+            <a href="/register" 
             class="hover:underline text-purple-800">
               Registrera dig
             </a>
