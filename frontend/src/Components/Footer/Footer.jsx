@@ -1,5 +1,5 @@
 import React from 'react'
-import {FaFacebookSquare, FaInstagram, FaTwitterSquare, FaDribbbleSquare, FaGithubSquare, FaApplePay} from 'react-icons/fa'
+import {FaFacebookSquare, FaInstagram, FaApplePay} from 'react-icons/fa'
 
 
 const Footer = () => {
@@ -13,21 +13,8 @@ const Footer = () => {
           </h1>
           <p className="py-4">
           Här på VapeHouse Älvsjö erbjuder vi ett brett utbud av e-cigaretter, 
-          skräddarsydda för att passa dina unika preferenser. Vår samling inkluderar 
-          allt från kraftfulla vapes som skapar intensiv smak och massiva ångmoln till 
-          smidiga och diskreta podsystem.
+          skräddarsydda för att passa dina unika preferenser. 
           </p>
-          <p className="py-4 text-purple-400">
-          FÖLJ OSS
-          </p>
-          <div className="flex md:w-[75%] justify-between my-6 text-purple-400">
-            {/* social media icons */}
-            <FaFacebookSquare size={30} className="cursor-pointer " />
-            <FaDribbbleSquare size={30} className="cursor-pointer " />
-            <FaInstagram size={30} className="cursor-pointer " />
-            <FaGithubSquare size={30} className="cursor-pointer " />
-            <FaTwitterSquare size={30} className="cursor-pointer " />
-          </div>
         </div>
         <div className="text-white sm:w-[900px] sm:ml-[18%] sm:mr-[12%] sm:pt-0">
           <div>
@@ -82,16 +69,13 @@ const Footer = () => {
             </ul>
           </div>
           <div className="pr-4">
-            <h6 className="font-medium text-purple-400">INFORMATION</h6>
+            <h6 className="font-medium text-purple-400">FÖLJ OSS</h6>
             <ul>
               <li className="py-2 text-sm cursor-pointer font-semibold">
-                About
+              <FaFacebookSquare size={30} className="cursor-pointer " />
               </li>
               <li className="py-2 text-sm cursor-pointer font-semibold">
-                Blog
-              </li>
-              <li className="py-2 text-sm cursor-pointer font-semibold">
-                Jobs
+              <FaInstagram size={30} className="cursor-pointer " />
               </li>
             </ul>
           </div>
