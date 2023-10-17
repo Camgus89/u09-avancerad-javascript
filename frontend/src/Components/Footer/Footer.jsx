@@ -88,7 +88,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="pr-4">
-            <h6 className="font-medium text-blue-400">Company</h6>
+            <h6 className="font-medium text-purple-400">Company</h6>
             <ul>
               <li className="py-2 text-sm cursor-pointer font-semibold">
                 About
@@ -110,7 +110,7 @@ const Footer = () => {
           <div className="pr-4">
           </div>
         </div>
-        <div className="h-[1px] bg-gray-100/20 w-[100rem] ml-[-20rem]"></div>
+        <div className="w-[310%] h-[2px] bg-gradient-to-r from-purple-800 to-violet-200"></div>
         <p className='pt-4 text-gray-200/40 text-sm flex justify-center text-center'>All Rights Reserved 2023 - VapeHouse Älvsjö</p>
       </div>
       {/* footer bottom section with links */}
