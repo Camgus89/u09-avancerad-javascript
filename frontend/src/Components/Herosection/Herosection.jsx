@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import heroImage from '../../images/heroImage.jpg';
-// import Stars from '../../images/stars.png';
 import {motion} from 'framer-motion';
 
 const Herosection = () => {
@@ -29,7 +27,7 @@ const Herosection = () => {
             VapeHouse 
             <br />
             <span className='sm:text-8xl text-6xl'>
-            Älvsjö baaaam
+            Älvsjö
             </span>
           </h1>
           <p class="text-white text-sm mb-8 max-w-[480px] sm:text-base">
@@ -39,72 +37,6 @@ const Herosection = () => {
           smidiga och diskreta podsystem.
             </p>
           </motion.div>
-
-          <motion.div           
-          variants={{
-            visible: { opacity: 1, x: 0 },
-            hidden: { opacity: 0, x: -75 },
-          }}
-          initial= "hidden"
-          animate= "visible"
-          transition={{duration: 0.5, delay: 0.25}}
-        >
-          <ul class="flex flex-wrap items-center">
-                    <li>
-                      <Link
-                        to="#"
-                        class="bg-purple-700 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-base font-normal text-white hover:bg-purple-500 sm:px-10 lg:px-8 xl:px-10"
-                      >
-                        Get Started
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="#"
-                        class="bg-purple-200/80 ml-6 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-black font-normal hover:bg-purple-200 sm:px-10 lg:px-8 xl:px-10"
-                      >
-                        Take a look
-                      </Link>
-                    </li>
-                  </ul>
-          </motion.div>
-
-          {/* <motion.div
-                  variants={{
-                    visible: { opacity: 1 },
-                    hidden: { opacity: 0 },
-                  }}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ duration: 0.8, delay: 0.25 }}
-                  class="clients pt-16"
-                >
-                  <h6 class="text-white mb-2 flex items-center text-xs font-normal">
-                    Some Of Our Clients
-                    <span class="bg-body-color ml-2 inline-block h-[1px] w-8"></span>
-                  </h6>
-                  <div class="flex items-center">
-                    <div class="mr-4 w-full py-3">
-                      <img
-                        src="https://cdn.tailgrids.com/2.0/image/assets/images/brands/ayroui.svg"
-                        alt="ayroui"
-                      />
-                    </div>
-                    <div class="mr-4 w-full py-3">
-                      <img
-                        src="https://cdn.tailgrids.com/2.0/image/assets/images/brands/graygrids.svg"
-                        alt="graygrids"
-                      />
-                    </div>
-                    <div class="mr-4 w-full py-3">
-                      <img
-                        src="https://cdn.tailgrids.com/2.0/image/assets/images/brands/uideck.svg"
-                        alt="uideck"
-                      />
-                    </div>
-                  </div>
-                </motion.div> */}
-
         </div>
       </div>
       <div class="hidden px-4 lg:block lg:w-1/12"></div>
@@ -127,12 +59,6 @@ const Herosection = () => {
               alt="hero"
               class="max-w-full lg:ml-auto rounded-l-[20%] rounded-br-[6%]"
                   />
-          {/* <img 
-          src={Stars} 
-          alt='stars' 
-          className='z-20 w-28 absolute mt-[-105%] right-[-5%] opacity-70 hover:opacity-100'
-          /> */}
-
             <span class="absolute -left-8 -bottom-8 z-[-1]">
               <svg
                 width="93"
