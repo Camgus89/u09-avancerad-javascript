@@ -1,26 +1,39 @@
 import React from 'react'
-import {FaFacebookSquare, FaInstagram} from 'react-icons/fa'
+import {FaFacebookSquare, FaInstagram, FaTwitterSquare, FaDribbbleSquare, FaGithubSquare} from 'react-icons/fa'
 
 const Footer = () => {
   return (
     <div className="overflow-x-hidden max-w-screen font-poppins">
       {/* footer top section */}
-      <div className="sm:flex justify-between py-10 px-8 grid bg-black">
+      <div className="sm:flex justify-between py-10 px-8 grid bg-gray-900">
         <div className="text-white">
-          <h1 className="w-full text-3xl font-bold cursor-pointer text-white">
+          <h1 className="w-full text-3xl font-bold cursor-pointer text-purple-400">
             VapeHouse Älvsjö
           </h1>
+          <p className="py-4">
+            Welcome to LevelUp Solutions, where we transform raw information
+            into actionable insights. With cutting-edge technology and a team of
+            skilled analysts, we specialize in deciphering complex data sets to
+            uncover valuable patterns and trends with which wee take your
+            business to the Next Level.
+          </p>
           <div className="flex md:w-[75%] justify-between my-6 text-purple-400">
             {/* social media icons */}
             <FaFacebookSquare size={30} className="cursor-pointer " />
+            <FaDribbbleSquare size={30} className="cursor-pointer " />
             <FaInstagram size={30} className="cursor-pointer " />
+            <FaGithubSquare size={30} className="cursor-pointer " />
+            <FaTwitterSquare size={30} className="cursor-pointer " />
           </div>
         </div>
         <div className="text-white sm:w-[900px] sm:ml-[18%] sm:mr-[12%] sm:pt-0">
           <div>
             <h1 className="sm:w-[30rem] md:text-4xl sm:text-3xl text-center text-2xl font-bold py-2">
-            Sign up to our newsletter and stay up to date.
+              Want tips & Tricks to optimize your Work flow?
             </h1>
+            <p className=" text-center pb-4">
+              Sign up to our newsletter and stay up to date.
+            </p>
           </div>
           <div className="my-4">
             <div className="justify-center flex">
@@ -29,7 +42,7 @@ const Footer = () => {
                 type="email"
                 placeholder="Enter Your E-Mail"
               />
-              <button className="bg-purple-400 mx-auto w-28 hover:bg-purple-500 rounded-md font-medium">
+              <button className="bg-purple-400 mx-auto w-28 hover:bg-blue-500 rounded-md font-medium">
                 Sign UP
               </button>
             </div>
@@ -43,27 +56,24 @@ const Footer = () => {
         </div>
       </div>
       {/* footer top section end */}
-      <div className="sm:mx-auto pt-10 pb-8 sm:grid flex-row lg:grid-cols-3 w-screen gap-8 text-gray-300 bg-gray-900 ">
+      <div className="sm:mx-auto pt-10 pb-8 sm:grid flex-row lg:grid-cols-3 w-screen gap-8 text-gray-300 bg-gray-800 ">
         <div className="lg:col-span-3 sm:mr-20  flex justify-between max-w-screen sm:ml-20 ml-[12px] mb-4 sm:mb-0 ">
           <div className="pr-4">
-            <h6 className="font-medium text-purple-400">Solutions</h6>
+            <h6 className="font-medium text-purple-400">Butikens öppet tider</h6>
             <ul>
               <li className="py-2 text-sm cursor-pointer font-semibold">
-                Analytics
+                <span className='font-bold'>Mån-fre</span> 10:00-18:00
               </li>
               <li className="py-2 text-sm cursor-pointer font-semibold">
-                Marketing
+                Lördag 10:00-17:00
               </li>
               <li className="py-2 text-sm cursor-pointer font-semibold">
-                Ecommerce
-              </li>
-              <li className="py-2 text-sm cursor-pointer font-semibold">
-                Insights
+                Söndag 10:00-16:00
               </li>
             </ul>
           </div>
           <div className="pr-4">
-            <h6 className="font-medium text-purple-400">Support</h6>
+            <h6 className="font-medium text-purple-400">Hitta till oss</h6>
             <ul>
               <li className="py-2 text-sm cursor-pointer font-semibold">
                 Pricing
@@ -78,7 +88,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="pr-4">
-            <h6 className="font-medium text-purple-400">Company</h6>
+            <h6 className="font-medium text-blue-400">Company</h6>
             <ul>
               <li className="py-2 text-sm cursor-pointer font-semibold">
                 About
@@ -98,18 +108,6 @@ const Footer = () => {
             </ul>
           </div>
           <div className="pr-4">
-            <h6 className="font-medium text-purple-400">Legal</h6>
-            <ul>
-              <li className="py-2 text-sm cursor-pointer font-semibold">
-                Claim
-              </li>
-              <li className="py-2 text-sm cursor-pointer font-semibold">
-                Policy
-              </li>
-              <li className="py-2 text-sm cursor-pointer font-semibold">
-                Terms
-              </li>
-            </ul>
           </div>
         </div>
         <div className="h-[1px] bg-gray-100/20 w-[100rem] ml-[-20rem]"></div>
