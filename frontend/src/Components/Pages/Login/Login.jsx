@@ -1,8 +1,18 @@
 import React from 'react';
+import { useState } from 'react'
 import Navbar from "../../Navigation/Navbar";
 import Footer from "../../Footer/Footer";
 
 const Login = () => {
+  const [data, setData] = useState({
+    email: '',
+    password: '',
+  })
+
+const loginUser = (e) => {
+  e.preventDefault()
+}
+
   return (
     <div>
       <Navbar />
@@ -17,35 +27,38 @@ const Login = () => {
           <div class="mb-10 text-center md:mb-16">
               <h1 className='text-black mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]'>Login</h1>  
           </div>
-          <form>
+
+          <form onSubmit={loginUser}>
             <div class="mb-6">
               <input
                 type="text"
                 placeholder="Email"
-                class="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                value={data.email} onChange={(e) => setData({...data, email: e.target.value})}
+                className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
               />
             </div>
-            <div class="mb-6">
+            <div className="mb-6">
               <input
                 type="password"
                 placeholder="Password"
-                class="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                value={data.password} onChange={(e) => setData({...data, password: e.target.value})}
+                className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
               />
             </div>
-            <div class="mb-10">
+            <div className="mb-10">
               <input
                 type="submit"
                 value="Logga in"
-                class="bg-purple-800 hover:bg-purple-500 border-primary w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
+                className="bg-purple-800 hover:bg-purple-500 border-primary w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
               />
             </div>
           </form>
-          <p class="mb-6 text-base text-[#adadad]">Logga in med:</p>
-          <ul class="-mx-2 mb-12 flex justify-between">
-            <li class="w-full px-2">
+          <p className="mb-6 text-base text-[#adadad]">Logga in med:</p>
+          <ul className="-mx-2 mb-12 flex justify-between">
+            <li className="w-full px-2">
               <a
                 href="/github"
-                class="flex h-11 items-center justify-center rounded-md bg-purple-300 hover:bg-opacity-90"
+                className="flex h-11 items-center justify-center rounded-md bg-purple-300 hover:bg-opacity-90"
               >
                 <svg
                   width="10"
@@ -61,10 +74,10 @@ const Login = () => {
                 </svg>
               </a>
             </li>
-            <li class="w-full px-2">
+            <li className="w-full px-2">
               <a
                 href="/twitter"
-                class="flex h-11 items-center justify-center rounded-md bg-purple-300 hover:bg-opacity-90"
+                className="flex h-11 items-center justify-center rounded-md bg-purple-300 hover:bg-opacity-90"
               >
                 <svg
                   width="22"
@@ -80,10 +93,10 @@ const Login = () => {
                 </svg>
               </a>
             </li>
-            <li class="w-full px-2">
+            <li className="w-full px-2">
               <a
                 href="/google"
-                class="flex h-11 items-center justify-center rounded-md bg-purple-300 hover:bg-opacity-90"
+                className="flex h-11 items-center justify-center rounded-md bg-purple-300 hover:bg-opacity-90"
               >
                 <svg
                   width="18"
@@ -102,14 +115,14 @@ const Login = () => {
           </ul>
           <a
             href="/"
-            class="mb-2 inline-block text-base text-[#adadad] hover:text-purple-800 hover:underline"
+            className="mb-2 inline-block text-base text-[#adadad] hover:text-purple-800 hover:underline"
           >
             Glömt lösenord?
           </a>
-          <p class="text-base text-[#adadad]">
-            <span class="pr-0.5">Inte medlem? </span>
+          <p className="text-base text-[#adadad]">
+            <span className="pr-0.5">Inte medlem? </span>
             <a href="/register" 
-            class="hover:underline text-purple-800">
+            className="hover:underline text-purple-800">
               Registrera dig
             </a>
           </p>
