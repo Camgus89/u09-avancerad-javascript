@@ -7,11 +7,11 @@ import {FaShoppingBasket, FaRegHeart} from 'react-icons/fa'
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  console.log(open);
+  // console.log(open);
   
   return (
     <div className="max-w-screen overflow-x-hidden font-poppins">
-      <nav className="bg-black fixed px-2  sm:h-auto sm:w-full w-screen z-20 left-0 right-0 top-0 border-b border-gray-400">
+      <nav className="bg-black fixed px-2 h-auto w-full lg:w-screen z-20 left-0 right-0 top-0 border-b border-gray-400">
         {/* dektop nav */}
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:p-4 pb-2">
           <Link to="/" className="flex items-center">
@@ -63,6 +63,7 @@ const Navbar = () => {
         </div>
 
         {/* desktop nav end */}
+        
         <div className={`${open ? null : "hidden"} h-[19rem]`}>
           <ul>
             <li className="text-white hover:text-purple-400 font-semibold pl-8 cursor-pointer pb-4 pt-6">
