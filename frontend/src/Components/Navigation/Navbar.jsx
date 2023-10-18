@@ -7,7 +7,6 @@ import {FaShoppingBasket, FaRegHeart} from 'react-icons/fa'
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  // console.log(open);
   
   return (
     <div className="max-w-screen overflow-x-hidden font-poppins">
@@ -93,9 +92,11 @@ const Navbar = () => {
           </div>
           <div className="flex justify-end">
             <div className="mt-[6%] mr-4">
-              <button className="text-white font-semibold border rounded-xl py-2 px-4 hover:bg-gray-100/20">
+              <Link
+              to="/login"
+              className="text-white font-semibold border rounded-xl py-2 px-4 hover:bg-gray-100/20">
                 Logout
-              </button>
+              </Link>
             </div>
           </div>
           <div className="flex justify-center">
