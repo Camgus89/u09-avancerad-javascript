@@ -9,12 +9,15 @@ import Contact from './Components/Pages/Contact/Contact';
 import Login from './Components/Pages/Login/Login';
 import Register from './Components/Pages/Register/Register';
 import { Toaster } from 'react-hot-toast';
+import { UserContextProvider } from './context/userContext';
+import Daschboard from './Components/Pages/Daschboard/Daschboard';
 
 axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.withCredentials = 'true';
 
 function App() {
   return (
+    <UserContextProvider>
     <BrowserRouter>
       <Toaster position='bottom-right' toastOptions={{duration: 2000}} />
       <Routes>
@@ -24,8 +27,10 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
+        <Route path='/daschboard' element={<Daschboard/>}/>
       </Routes>
     </BrowserRouter>
+    </UserContextProvider>
   );
 }
 

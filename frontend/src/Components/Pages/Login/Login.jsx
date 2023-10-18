@@ -25,7 +25,7 @@ const loginUser = async (e) => {
       toast.error(data.error)
     } else {
       setData({});
-      navigate('/')
+      navigate('/daschboard')
     }
   } catch (error) {
     
