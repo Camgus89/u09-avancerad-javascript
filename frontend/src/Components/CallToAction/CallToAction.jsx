@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import {motion, useInView, useAnimation} from 'framer-motion';
+import { Link } from "react-router-dom";
 
 const CallToAction = () => {
     const {innerWidth: Width} = window;
@@ -16,10 +17,10 @@ const CallToAction = () => {
     <div>
       <div className="w-[70%]  h-[2px] bg-gradient-to-r from-purple-400 to-violet-500"></div>
       <>
-        <section class="py-20 lg:py-[120px] bg-gray-100/50 font-poppins">
-          <div class="container mx-auto">
-            <div class="bg-purple-800 relative z-10 sm:-mt-10 sm:-mb-10 overflow-x-hidden rounded py-12 px-8 md:p-[70px]">
-              <div class="-mx-4 flex flex-wrap items-center">
+        <section className="py-20 lg:py-[120px] bg-gray-100/50 font-poppins">
+          <div className="container mx-auto">
+            <div className="bg-purple-800 relative z-10 sm:-mt-10 sm:-mb-10 overflow-x-hidden rounded py-12 px-8 md:p-[70px]">
+              <div className="-mx-4 flex flex-wrap items-center">
                 <motion.div
                   ref={ref}
                   variants={{
@@ -31,16 +32,16 @@ const CallToAction = () => {
                   transition={{ duration: 0.4, delay: 0.2 }}
                   class="w-full px-4 lg:w-1/2"
                 >
-                  <h2 class="mb-6 text-3xl font-bold leading-tight text-white sm:mb-8 sm:text-[38px] lg:mb-0">
-                    VapeHouse <br class="xs:block hidden" />
+                  <h2 className="mb-6 text-3xl font-bold leading-tight text-white sm:mb-8 sm:text-[38px] lg:mb-0">
+                    VapeHouse <br className="xs:block hidden" />
                     {" "}
                     <span className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-purple-100">
                       Stockholm
                     </span>
                   </h2>
                 </motion.div>
-                <div class="w-full px-4 lg:w-1/2">
-                  <div class="flex sm:flex-wrap sm:justify-end">
+                <div className="w-full px-4 lg:w-1/2">
+                  <div className="flex sm:flex-wrap sm:justify-end">
                     <motion.div
                       ref={ref}
                       variants={{
@@ -52,12 +53,12 @@ const CallToAction = () => {
                       transition={{ duration: 0.4, delay: 0.2 }}
                     >
                       {" "}
-                      <button
-                        href="#"
-                        class="hover:bg-purple-500 my-1 mr-4 inline-block rounded bg-white bg-opacity-[15%] py-4 px-6 text-base font-medium text-white transition hover:bg-opacity-100 md:px-9 lg:px-6 xl:px-9"
+                      <Link
+                        to="/register"
+                        className="hover:bg-purple-500 my-1 mr-4 inline-block rounded bg-white bg-opacity-[15%] py-4 px-6 text-base font-medium text-white transition hover:bg-opacity-100 md:px-9 lg:px-6 xl:px-9"
                       >
                         Register
-                      </button>
+                      </Link>
                     </motion.div>
                     <motion.div
                       ref={ref}
@@ -70,18 +71,18 @@ const CallToAction = () => {
                       transition={{ duration: 0.4, delay: 0.5 }}
                     >
                       {" "}
-                      <button
-                        href="#"
-                        class="my-1 inline-block rounded hover:bg-purple-500 bg-purple-400 py-4 px-6 text-base font-medium text-white transition hover:bg-opacity-90 md:px-9 lg:px-6 xl:px-9"
+                      <Link
+                        to="/login"
+                        className="my-1 inline-block rounded hover:bg-purple-500 bg-purple-400 py-4 px-6 text-base font-medium text-white transition hover:bg-opacity-90 md:px-9 lg:px-6 xl:px-9"
                       >
                         Login
-                      </button>
+                      </Link>
                     </motion.div>
                   </div>
                 </div>
               </div>
               <div>
-                <span class="absolute top-0 left-0 z-[-1]">
+                <span className="absolute top-0 left-0 z-[-1]">
                   <svg
                     width="189"
                     height="162"
@@ -112,7 +113,7 @@ const CallToAction = () => {
                     </defs>
                   </svg>
                 </span>
-                <span class="absolute bottom-0 right-0 z-[-1]">
+                <span className="absolute bottom-0 right-0 z-[-1]">
                   <svg
                     width="191"
                     height="208"
