@@ -8,6 +8,7 @@ import Services from './Components/Pages/Services/Services';
 import Contact from './Components/Pages/Contact/Contact';
 import Login from './Components/Pages/Login/Login';
 import Register from './Components/Pages/Register/Register';
+import { Toaster } from 'react-hot-toast';
 
 axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.withCredentials = 'true';
@@ -15,6 +16,7 @@ axios.defaults.withCredentials = 'true';
 function App() {
   return (
     <BrowserRouter>
+      <Toaster position='bottom-right' toastOptions={{duration: 2000}} />
       <Routes>
         <Route path='/' element={<HomePage/>}/>
         <Route path='/about' element={<About/>}/>
