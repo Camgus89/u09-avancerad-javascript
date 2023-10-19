@@ -12,6 +12,7 @@ import { Toaster } from 'react-hot-toast';
 import { UserContextProvider } from './context/userContext';
 import Daschboard from './Components/Pages/Daschboard/Daschboard';
 import ShoppingCart from './Components/Pages/ShoppingCart/ShoppingCart';
+import WhishList from './Components/Pages/WhishList/WhishList';
 
 axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.withCredentials = 'true';
@@ -30,6 +31,7 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/daschboard' element={<Daschboard/>}/>
         <Route path='/shoppingcart' element={<ShoppingCart/>}/>
+        <Route path='/whishlist' element={<WhishList/>}/>
       </Routes>
     </BrowserRouter>
     </UserContextProvider>

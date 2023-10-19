@@ -1,7 +1,6 @@
 import Navbar from '../../Navigation/Navbar';
 import Herosection from '../../Herosection/Herosection';
 import Features from '../../../Features/Features';
-// import CardComponent from '../../Price/CardComponent';
 import Products from '../../Products/Products';
 import CallToAction from '../../CallToAction/CallToAction';
 import Review from "../../Review/Review";
@@ -13,7 +12,6 @@ const HomePage = () => {
     <Navbar/> 
     <Herosection />
     <Features />
-    {/* <CardComponent/> */}
     <Products/>
     <CallToAction/>
     <Review/>
