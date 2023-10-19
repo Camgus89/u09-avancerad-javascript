@@ -11,6 +11,7 @@ import Register from './Components/Pages/Register/Register';
 import { Toaster } from 'react-hot-toast';
 import { UserContextProvider } from './context/userContext';
 import Daschboard from './Components/Pages/Daschboard/Daschboard';
+import ShoppingCart from './Components/Pages/ShoppingCart/ShoppingCart';
 
 axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.withCredentials = 'true';
@@ -28,6 +29,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/daschboard' element={<Daschboard/>}/>
+        <Route path='/shoppingcart' element={<ShoppingCart/>}/>
       </Routes>
     </BrowserRouter>
     </UserContextProvider>

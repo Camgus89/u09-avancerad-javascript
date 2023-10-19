@@ -60,7 +60,7 @@ const Navbar = () => {
                 className="p-1 mr-3 text-white hover:text-purple-500"
               />
             </Link>
-            <Link to="#">
+            <Link to="/shoppingcart">
               <FaShoppingBasket
                 size={30}
                 className="p-1 mr-3 text-white hover:text-purple-500"
