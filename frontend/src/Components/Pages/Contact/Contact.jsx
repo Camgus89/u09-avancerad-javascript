@@ -88,13 +88,13 @@ const Contact = () => {
                       <textarea
                         rows="6"
                         placeholder="Meddelande"
-                        class="text-body-color border-[f0f0f0] focus:border-primary w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+                        class="text-body-color border-[f0f0f0] focus:border-purple-900 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                       ></textarea>
                     </div>
                     <div>
                       <button
                         type="submit"
-                        class="bg-primary border-primary w-full rounded border p-3 text-black transition hover:bg-opacity-90"
+                        class="bg-purple-800 hover:bg-purple-500 border-primary w-full rounded border p-3 text-white transition hover:bg-opacity-90"
                       >
                         Skicka Meddelande
                       </button>

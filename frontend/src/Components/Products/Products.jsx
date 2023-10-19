@@ -5,7 +5,7 @@ const Products = () => {
   return (
     <div>
 
-<section class="bg-[#F3F4F6] pt-10 pb-10 lg:pt-[50px] lg:pb-20">
+<section class="bg-purple-50 pt-10 pb-10 lg:pt-[50px] lg:pb-20">
 <div>
 <h2 className="text-3xl font-bold tracki text-center sm:text-5xl">Vape/E-cigaretter</h2>
 <p className="max-w-3xl mx-auto mt-4 text-xl text-center">Ett brett sortiment av Stockholms bästa Vapes!</p>
