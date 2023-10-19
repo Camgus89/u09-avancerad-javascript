@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import profileImage from "../../images/profile.png";
 import { FaShoppingBasket, FaRegHeart, FaRegUser } from "react-icons/fa";
-import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -51,26 +50,26 @@ const Navbar = () => {
             </button> */}
             <Link to="/login">
               <FaRegUser
-                size={25}
-                className="mt-2 mr-3 text-white hover:text-purple-500"
+                size={30}
+                className="p-1 mr-3 text-white hover:text-purple-500"
               />
             </Link>
             <Link to="#">
               <FaRegHeart
-                size={25}
-                className="mr-3 text-white hover:text-purple-500"
+                size={30}
+                className="p-1 mr-3 text-white hover:text-purple-500"
               />
             </Link>
             <Link to="#">
               <FaShoppingBasket
-                size={25}
-                className="mr-3 text-white hover:text-purple-500"
+                size={30}
+                className="p-1 mr-3 text-white hover:text-purple-500"
               />
             </Link>
             <button onClick={() => setOpen(!open)} className="sm:hidden block">
               <GiHamburgerMenu
-                size={30}
-                className="mt-2 mr-2 text-purple-400"
+                size={40}
+                className="p-2 mt-2 mr-2 text-purple-400"
               />
             </button>
           </div>
