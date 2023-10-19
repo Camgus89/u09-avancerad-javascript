@@ -68,7 +68,7 @@ const Navbar = () => {
             <button onClick={() => setOpen(!open)} className="sm:hidden block">
               <GiHamburgerMenu
                 size={40}
-                className="p-2 mt-2 mr-2 text-purple-400"
+                className="p-2 mt-2 mr-2 text-purple-500"
               />
             </button>
           </div>
@@ -76,7 +76,7 @@ const Navbar = () => {
 
         {/* desktop nav end */}
 
-        <div className={`${open ? null : "hidden"} h-[19rem]`}>
+        <div className={`${open ? null : "hidden"} `}>
 
         <div className="p-3 space-y-2 w-60 bg-black text-gray-100">
           <div className="flex items-center p-2 space-x-4">
@@ -84,7 +84,7 @@ const Navbar = () => {
               <h2 className="text-lg font-semibold">Leroy Jenkins</h2>
             </div>
           </div>
-          <div className="divide-y divide-purple-400">
+          <div className="divide-y divide-purple-950">
             <ul className="pt-2 pb-4 space-y-1 text-sm">
               <li>
                 <a
@@ -100,7 +100,7 @@ const Navbar = () => {
                   <span>Mitt konto</span>
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   rel="noopener noreferrer"
                   href="/"
@@ -113,7 +113,7 @@ const Navbar = () => {
                   </svg>
                   <span>Search</span>
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   rel="noopener noreferrer"
