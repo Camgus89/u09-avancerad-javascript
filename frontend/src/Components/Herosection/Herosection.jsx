@@ -13,11 +13,11 @@ const Herosection = () => {
   return (
     <div className="font-poppins overflow-x-hidden">
       <div
-        className="relative pt-[120px] pb-[110px] lg:pt-[150px] bg-[#000000]"
+        className="relative pt-[120px] pb-[110px] lg:pt-[500px] bg-[#000000]"
         style={heroImageStyle}>
         <div className="container mx-auto px-10">
           <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4 lg:w-5/12">
+            <div className="w-full px-3 lg:w-5/12">
               <div className="hero-content">
                 <motion.div
                   variants={{
