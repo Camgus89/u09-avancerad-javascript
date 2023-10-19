@@ -55,18 +55,18 @@ const Navbar = () => {
                 className="mt-2 mr-3 text-white hover:text-purple-500"
               />
             </Link>
-            <button>
+            <Link to="#">
               <FaRegHeart
                 size={25}
                 className="mr-3 text-white hover:text-purple-500"
               />
-            </button>
-            <button>
+            </Link>
+            <Link to="#">
               <FaShoppingBasket
                 size={25}
                 className="mr-3 text-white hover:text-purple-500"
               />
-            </button>
+            </Link>
             <button onClick={() => setOpen(!open)} className="sm:hidden block">
               <GiHamburgerMenu
                 size={30}

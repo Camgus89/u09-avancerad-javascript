@@ -27,10 +27,10 @@ const Herosection = () => {
                   initial="hidden"
                   animate="visible"
                   transition={{ duration: 0.5, delay: 0.25 }}>
-                  <h1 className="text-transparent bg-clip-text bg-gradient-to-r sm:text-8xl text-2xl from-purple-800 to-purple-200 mb-3  font-bold leading-snug sm:text-[42px] lg:text-[40px] xl:text-[42px]">
+                  <h1 className="text-transparent bg-clip-text bg-gradient-to-r lg:text-6xl text-2xl from-purple-800 to-purple-100 mb-3 font-bold leading-snug sm:text-[40px] lg:text-[40px] xl:text-[42px]">
                     VapeHouse
                     <br />
-                    <span className="sm:text-8xl text-6xl">Älvsjö</span>
+                    <span className="lg:text-8xl text-6xl">Älvsjö</span>
                   </h1>
                 </motion.div>
               </div>
@@ -47,7 +47,8 @@ const Herosection = () => {
                     initial="hidden"
                     animate="visible"
                     transition={{ duration: 0.5, delay: 0.25 }}
-                    className="relative z-10 inline-block pt-11 lg:pt-0 mt-6"></motion.div>
+                    className="relative z-10 inline-block pt-11 lg:pt-0 mt-6">
+                    </motion.div>
                 </div>
               </div>
             </div>
