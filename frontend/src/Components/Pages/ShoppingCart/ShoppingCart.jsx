@@ -217,15 +217,15 @@ const ShoppingCart = () => {
                     </div>
                     <div className="flex justify-end space-x-4">
                       <Link to="/"
-                        className="px-6 py-2 border rounded-md dark:border-purple-800">
+                        className="px-6 py-2 border rounded-md border-purple-500">
                         Fortsätt shoppa
                       </Link>
                       <Link to="/"
-                        className="px-6 py-2 border rounded-md dark:bg-violet-400 dark:text-gray-900 dark:border-violet-400">
+                        className="px-6 py-2 border rounded-md bg-purple-800 hover:bg-purple-500 text-white">
                         <span className="sr-only sm:not-sr-only">
-                          Fortsätt 
+                        Till kassan
                         </span>
-                        till kassan
+                        
                       </Link>
                     </div>
                   </div>
