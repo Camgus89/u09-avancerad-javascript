@@ -38,12 +38,12 @@ function App() {
       <CookieParser 
       debug={true}
       location="bottom"
-      style={{background: '#000', textAlign: 'left'}}
+      style={{background: '#000', textAlign: 'left', fontFamily: 'poppins'}}
       buttonStyle={{ color: '#000', background: '#fff', fontSize: '14px'}}
       buttonText='Accept'
       expires={1}
       >
-        This site uses cookies. See our <a href="/privacy">private policy</a> for more.
+        This site uses cookies. See our <a className="text-purple-500 hover:text-purple-300" href="/privacy">private policy</a> for more.
         </CookieParser>
     </UserContextProvider>
   );
