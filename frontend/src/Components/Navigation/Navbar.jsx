@@ -1,24 +1,24 @@
 import React, { useState } from "react";
-import Icon from "../../images/level.png";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
-import profileImage from '../../images/profile.png'
-import {FaShoppingBasket, FaRegHeart} from 'react-icons/fa'
+import profileImage from "../../images/profile.png";
+import { FaShoppingBasket, FaRegHeart, FaRegUser } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  
+
   return (
     <div className="max-w-screen overflow-x-hidden font-poppins">
-      <nav className="bg-black fixed px-2 h-auto w-full lg:w-screen z-20 left-0 right-0 top-0 border-b border-gray-400">
+      <nav className="bg-black fixed px-2 h-auto w-full lg:w-screen z-20 left-0 right-0 top-0 border-b border-purple-950">
         {/* dektop nav */}
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:p-4 pb-2">
           <Link to="/" className="flex items-center">
-            <img
+            {/* <img
               src={Icon}
               alt="icon"
               className="hidden sm:block sm:w-[35px] sm:-h-[35px] "
-            />
+            /> */}
             <span className="ml-2 mt-2 sm:mt-0 text-white font-semibold text-xl">
               VapeHouse Älvsjö
             </span>
@@ -37,7 +37,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex">
-            <button
+            {/* <button
               type="button"
               className="bg-purple-900 px-4 py-2 text-white hidden sm:block rounded-xl mr-2 hover:bg-purple-500"
             >
@@ -48,21 +48,36 @@ const Navbar = () => {
               className="hidden sm:block text-white border font-medium rounded-lg ml-2 text-sm px-4 hover:bg-blue-300/10 mr-4"
             >
               <Link to="/login">Login</Link>
+            </button> */}
+            <Link to="/login">
+              <FaRegUser
+                size={25}
+                className="mt-2 mr-3 text-white hover:text-purple-500"
+              />
+            </Link>
+            <button>
+              <FaRegHeart
+                size={25}
+                className="mr-3 text-white hover:text-purple-500"
+              />
             </button>
             <button>
-            <FaRegHeart size={25} className="mt-2 mr-3 text-white" />
-            </button>
-            <button>
-            <FaShoppingBasket size={25} className="mt-2 mr-3 text-white" />
+              <FaShoppingBasket
+                size={25}
+                className="mr-3 text-white hover:text-purple-500"
+              />
             </button>
             <button onClick={() => setOpen(!open)} className="sm:hidden block">
-              <GiHamburgerMenu size={30} className="mt-2 mr-2 text-purple-400" />
+              <GiHamburgerMenu
+                size={30}
+                className="mt-2 mr-2 text-purple-400"
+              />
             </button>
           </div>
         </div>
 
         {/* desktop nav end */}
-        
+
         <div className={`${open ? null : "hidden"} h-[19rem]`}>
           <ul>
             <li className="text-white hover:text-purple-400 font-semibold pl-8 cursor-pointer pb-4 pt-6">
@@ -84,7 +99,9 @@ const Navbar = () => {
                 className="w-14 ml-8 mt-4 flex"
               />
               <p className="my-auto ml-4 text-white font-semibold">Camilla</p>
-              <p className="my-auto ml-2 text-white font-semibold">Gustafsson</p>
+              <p className="my-auto ml-2 text-white font-semibold">
+                Gustafsson
+              </p>
             </div>
             <p className="my-auto ml-[103px] mt-[-27px] text-xs font-light text-gray-200/60">
               Camilla.89@gmail.com
@@ -93,14 +110,16 @@ const Navbar = () => {
           <div className="flex justify-end">
             <div className="mt-[6%] mr-4">
               <Link
-              to="/login"
-              className="text-white font-semibold border rounded-xl py-2 px-4 hover:bg-gray-100/20">
+                to="/login"
+                className="text-white font-semibold border rounded-xl py-2 px-4 hover:bg-gray-100/20">
                 Logout
               </Link>
             </div>
           </div>
           <div className="flex justify-center">
-            <p className="mt-[25px] text-gray-100/30 text-sm">All Rights Reserved - VapeHouse Älvsjö</p>
+            <p className="mt-[25px] text-gray-100/30 text-sm">
+              All Rights Reserved - VapeHouse Älvsjö
+            </p>
           </div>
         </div>
       </nav>
