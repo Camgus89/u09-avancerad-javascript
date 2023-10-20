@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import CookieParser from "react-cookie-consent";
 import HomePage from "./Components/Pages/HomePage/HomePage";
@@ -14,6 +14,7 @@ import { UserContextProvider } from "./context/userContext";
 import Daschboard from "./Components/Pages/Daschboard/Daschboard";
 import ShoppingCart from "./Components/Pages/ShoppingCart/ShoppingCart";
 import WhishList from "./Components/Pages/WhishList/WhishList";
+
 
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = "true";
@@ -43,7 +44,7 @@ function App() {
       buttonText='Accept'
       expires={1}
       >
-        This site uses cookies. See our <a className="text-purple-500 hover:text-purple-300" href="/privacy">private policy</a> for more.
+        This site uses cookies. See our <Link className="text-purple-500 hover:text-purple-300" to="/privacy">private policy</Link> for more.
         </CookieParser>
     </UserContextProvider>
   );
