@@ -5,7 +5,7 @@ import Navbar from "../../Navigation/Navbar";
 import Footer from "../../Footer/Footer";
 import { Link } from "react-router-dom";
 
-const Daschboard = () => {
+const Dashboard = () => {
   const { user } = useContext(UserContext);
   return (
     <div>
@@ -38,4 +38,4 @@ const Daschboard = () => {
   );
 };
 
-export default Daschboard;
+export default Dashboard;
