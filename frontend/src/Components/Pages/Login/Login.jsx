@@ -13,7 +13,6 @@ const Login = () => {
     password: "",
   });
 
-
   const loginUser = async (e) => {
     e.preventDefault()
     const {email, password} = data
@@ -26,7 +25,7 @@ const Login = () => {
         toast.error(data.error)
       } else {
         setData({});
-        navigate('/dashboard')
+        navigate('/daschboard')
       }
     } catch (error) {
       

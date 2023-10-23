@@ -60,41 +60,41 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
-                <div class="relative rounded-lg bg-white p-8 shadow-lg sm:p-12">
+              <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
+                <div className="relative rounded-lg bg-white p-8 shadow-lg sm:p-12">
                   <form>
-                    <div class="mb-6">
+                    <div className="mb-6">
                       <input
                         type="text"
                         placeholder="Namn"
-                        class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+                        className="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                       />
                     </div>
-                    <div class="mb-6">
+                    <div className="mb-6">
                       <input
                         type="email"
                         placeholder="Email"
-                        class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+                        className="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                       />
                     </div>
-                    <div class="mb-6">
+                    <div className="mb-6">
                       <input
                         type="text"
                         placeholder="Telefon"
-                        class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+                        className="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                       />
                     </div>
-                    <div class="mb-6">
+                    <div className="mb-6">
                       <textarea
                         rows="6"
                         placeholder="Meddelande"
-                        class="text-body-color border-[f0f0f0] focus:border-purple-900 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+                        className="text-body-color border-[f0f0f0] focus:border-purple-900 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                       ></textarea>
                     </div>
                     <div>
                       <button
                         type="submit"
-                        class="bg-purple-800 hover:bg-purple-500 border-primary w-full rounded border p-3 text-white transition hover:bg-opacity-90"
+                        className="bg-purple-800 hover:bg-purple-500 border-primary w-full rounded border p-3 text-white transition hover:bg-opacity-90"
                       >
                         Skicka Meddelande
                       </button>
