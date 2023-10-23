@@ -25,7 +25,7 @@ const Login = () => {
         toast.error(data.error)
       } else {
         setData({});
-        navigate('/daschboard')
+        navigate('/dashboard')
       }
     } catch (error) {
       

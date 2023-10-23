@@ -11,7 +11,7 @@ import Login from "./Components/Pages/Login/Login";
 import Register from "./Components/Pages/Register/Register";
 import { Toaster } from "react-hot-toast";
 import { UserContextProvider } from "./context/userContext";
-import Daschboard from "./Components/Pages/Daschboard/Daschboard";
+import Daschboard from "./Components/Pages/Dashboard/Dachboard";
 import ShoppingCart from "./Components/Pages/ShoppingCart/ShoppingCart";
 import WhishList from "./Components/Pages/WhishList/WhishList";
 
