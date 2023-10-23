@@ -13,43 +13,43 @@ const Login = () => {
     password: "",
   });
 
-  const [response, setResponse] = useState(undefined);
 
   const loginUser = async (e) => {
-    e.preventDefault();
-    const { email, password } = data;
+    e.preventDefault()
+    const {email, password} = data
     try {
-      const { data } = await axios.post("/login", {
+      const {data} = await axios.post('/login', {
         email,
-        password,
+        password
       });
-      if (data.error) {
-        toast.error(data.error);
+      if(data.error) {
+        toast.error(data.error)
       } else {
-        setResponse(data);
-        console.log(response)
-        // navigate("/daschboard");
+        setData({});
+        navigate('/dashboard')
       }
-    } catch (error) {}
-  };
+    } catch (error) {
+      
+    }
+  }
 
   return (
     <div>
       <Navbar />
       <div className="max-w-screen font-poppins overflow-hidden ">
-        <section class="relative z-10 bg-gradient-to-br from-purple-100  py-20  sm:px-20 sm:py-40">
-          <div class="container mx-auto">
-            <div class="-mx-4 flex flex-wrap">
-              <div class="w-full px-4">
-                <div class="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]">
-                  <div class="mb-10 text-center md:mb-16">
+        <section className="relative z-10 bg-gradient-to-br from-purple-100  py-20  sm:px-20 sm:py-40">
+          <div className="container mx-auto">
+            <div className="-mx-4 flex flex-wrap">
+              <div className="w-full px-4">
+                <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]">
+                  <div className="mb-10 text-center md:mb-16">
                     <h1 className="text-black mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                       Login
                     </h1>
                   </div>
 
                   <form onSubmit={loginUser}>
-                    <div class="mb-6">
+                    <div className="mb-6">
                       <input
                         type="text"
                         placeholder="Email"
@@ -57,7 +57,7 @@ const Login = () => {
                         onChange={(e) =>
                           setData({ ...data, email: e.target.value })
                         }
-                        className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                        className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                       />
                     </div>
                     <div className="mb-6">

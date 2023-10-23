@@ -1,6 +1,6 @@
 import Navbar from '../../Navigation/Navbar';
 import Herosection from '../../Herosection/Herosection';
-import Features from '../../../Features/Features';
+// import Features from '../../../Features/Features';
 import Products from '../../Products/Products';
 import CallToAction from '../../CallToAction/CallToAction';
 import Review from "../../Review/Review";
@@ -11,7 +11,7 @@ const HomePage = () => {
     <>
     <Navbar/> 
     <Herosection />
-    <Features />
+    {/* <Features /> */}
     <Products/>
     <CallToAction/>
     <Review/>
@@ -20,4 +20,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default HomePage;

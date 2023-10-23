@@ -11,12 +11,12 @@ const Daschboard = () => {
     <div>
       <Navbar />
       <div className="max-w-screen font-poppins overflow-hidden ">
-        <section class="relative z-10 py-20 ">
-          <div class="container mx-auto">
-            <div class="-mx-4 flex flex-wrap">
-              <div class="w-full px-4">
-                <div class="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]">
-                  <div class="mb-10 text-center md:mb-16">
+        <section className="relative z-10 py-20 ">
+          <div className="container mx-auto">
+            <div className="-mx-4 flex flex-wrap">
+              <div className="w-full px-4">
+                <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]">
+                  <div className="mb-10 text-center md:mb-16">
                     <h1 className="text-black mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                     {!!user && <h1> HEJ {user.name}! </h1>}
                     </h1>

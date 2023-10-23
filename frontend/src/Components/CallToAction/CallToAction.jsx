@@ -3,7 +3,6 @@ import {motion, useInView, useAnimation} from 'framer-motion';
 import { Link } from "react-router-dom";
 
 const CallToAction = () => {
-    const {innerWidth: Width} = window;
     const ref = useRef();
     const isInView = useInView(ref)
     const mainControlls = useAnimation(isInView);
@@ -12,7 +11,9 @@ const CallToAction = () => {
         if(isInView) {
             mainControlls.start("visible")
         }
-    }, [isInView])
+    }, [isInView, mainControlls])
+
+
   return (
     <div>
       <div className="w-[70%]  h-[2px] bg-gradient-to-r from-purple-400 to-violet-500"></div>
@@ -30,7 +31,7 @@ const CallToAction = () => {
                   initial="hidden"
                   animate={mainControlls}
                   transition={{ duration: 0.4, delay: 0.2 }}
-                  class="w-full px-4 lg:w-1/2"
+                  className="w-full px-4 lg:w-1/2"
                 >
                   <h2 className="mb-6 text-3xl font-bold leading-tight text-white sm:mb-8 sm:text-[38px] lg:mb-0">
                     VapeHouse <br className="xs:block hidden" />
@@ -107,8 +108,8 @@ const CallToAction = () => {
                         y2="-106.425"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stop-color="white" stop-opacity="0.07" />
-                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                        <stop stopColor="white" stopOpacity="0.07" />
+                        <stop offset="1" stopColor="white" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                   </svg>
@@ -137,8 +138,8 @@ const CallToAction = () => {
                         y2="88.5747"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stop-color="white" stop-opacity="0.07" />
-                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                        <stop stopColor="white" stopOpacity="0.07" />
+                        <stop offset="1" stopColor="white" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                   </svg>

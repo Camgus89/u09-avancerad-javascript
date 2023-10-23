@@ -11,7 +11,7 @@ const Review = () => {
     if (isInView) {
       mainControlls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControlls]);
   return (
     <div className="overflow-x-hidden max-w-screen font-poppins">
       <section className="">
