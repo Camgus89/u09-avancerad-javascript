@@ -11,7 +11,7 @@ import Login from "./Components/Pages/Login/Login";
 import Register from "./Components/Pages/Register/Register";
 import { Toaster } from "react-hot-toast";
 import { UserContextProvider } from "./context/userContext";
-import Daschboard from "./Components/Pages/Dashboard/Dashboard";
+import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import ShoppingCart from "./Components/Pages/ShoppingCart/ShoppingCart";
 import WhishList from "./Components/Pages/WhishList/WhishList";
 
@@ -30,7 +30,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/daschboard" element={<Daschboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/shoppingcart" element={<ShoppingCart />} />
           <Route path="/whishlist" element={<WhishList />} />
         </Routes>

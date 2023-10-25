@@ -89,7 +89,7 @@ const Navbar = () => {
               <li>
                 <a
                   rel="noopener noreferrer"
-                  href="/daschboard"
+                  href="/dashboard"
                   className="flex items-center p-2 space-x-3 rounded-md hover:text-purple-500">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
