@@ -11,6 +11,13 @@ const Navbar = () => {
       <nav className="bg-black fixed px-2 h-auto w-full lg:w-screen z-20 left-0 right-0 top-0 border-b border-purple-950">
         {/* dektop nav */}
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:p-4 pb-2">
+          
+        <button onClick={() => setOpen(!open)} className="sm:hidden block">
+              <GiHamburgerMenu
+                size={40}
+                className="p-2 mt-2 mr-2 text-purple-500"
+              />
+            </button>
           <Link to="/" className="flex items-center">
             {/* <img
               src={Icon}
@@ -50,27 +57,27 @@ const Navbar = () => {
             <Link to="/login">
               <FaRegUser
                 size={30}
-                className="p-1 mr-3 text-white hover:text-purple-500"
+                className="p-1.5 mt-2 mr-2 text-white hover:text-purple-500"
               />
             </Link>
             <Link to="/whishlist">
               <FaRegHeart
                 size={30}
-                className="p-1 mr-3 text-white hover:text-purple-500"
+                className="p-1.5 mt-2 mr-2 text-white hover:text-purple-500"
               />
             </Link>
             <Link to="/shoppingcart">
               <FaShoppingBasket
                 size={30}
-                className="p-1 mr-3 text-white hover:text-purple-500"
+                className="p-1.5 mt-2 mr-2 text-white hover:text-purple-500"
               />
             </Link>
-            <button onClick={() => setOpen(!open)} className="sm:hidden block">
+            {/* <button onClick={() => setOpen(!open)} className="sm:hidden block">
               <GiHamburgerMenu
                 size={40}
                 className="p-2 mt-2 mr-2 text-purple-500"
               />
-            </button>
+            </button> */}
           </div>
         </div>
 
