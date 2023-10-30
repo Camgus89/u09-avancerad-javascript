@@ -1,0 +1,133 @@
+0 verbose cli /Users/camis/.nvm/versions/node/v18.18.0/bin/node /Users/camis/.nvm/versions/node/v18.18.0/bin/npm
+1 info using npm@10.2.1
+2 info using node@v18.18.0
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 2ms
+5 timing config:load:file:/Users/camis/.nvm/versions/node/v18.18.0/lib/node_modules/npm/npmrc Completed in 0ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 1ms
+9 timing config:load:file:/Users/camis/Desktop/ChasAcademy/u09-avancerad-javascript/frontend/.npmrc Completed in 0ms
+10 timing config:load:project Completed in 4ms
+11 timing config:load:file:/Users/camis/.npmrc Completed in 2ms
+12 timing config:load:user Completed in 2ms
+13 timing config:load:file:/Users/camis/.nvm/versions/node/v18.18.0/etc/npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:setEnvs Completed in 0ms
+16 timing config:load Completed in 12ms
+17 timing npm:load:configload Completed in 12ms
+18 timing config:load:flatten Completed in 2ms
+19 timing npm:load:mkdirpcache Completed in 0ms
+20 timing npm:load:mkdirplogs Completed in 1ms
+21 verbose title npm install @reduxjs/toolkit react-redux
+22 verbose argv "install" "@reduxjs/toolkit" "react-redux"
+23 timing npm:load:setTitle Completed in 21ms
+24 timing npm:load:display Completed in 1ms
+25 verbose logfile logs-max:10 dir:/Users/camis/Desktop/ChasAcademy/u09-avancerad-javascript/frontend/"/Users/camis/.npm/_logs/2023-10-30T12_52_30_458Z-
+26 verbose logfile /Users/camis/Desktop/ChasAcademy/u09-avancerad-javascript/frontend/"/Users/camis/.npm/_logs/2023-10-30T12_52_30_458Z-debug-0.log
+27 timing npm:load:logFile Completed in 8ms
+28 timing npm:load:timers Completed in 1ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 61ms
+31 timing arborist:ctor Completed in 0ms
+32 silly logfile done cleaning log files
+33 timing idealTree:init Completed in 885ms
+34 timing idealTree:userRequests Completed in 1ms
+35 silly idealTree buildDeps
+36 silly fetch manifest @babel/plugin-proposal-private-property-in-object@^1.0.6
+37 timing arborist:ctor Completed in 0ms
+38 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-proposal-private-property-in-object 657ms (cache miss)
+39 silly fetch manifest @reduxjs/toolkit@*
+40 http fetch GET 200 https://registry.npmjs.org/@reduxjs%2ftoolkit 343ms (cache miss)
+41 silly fetch manifest react@^18.2.0
+42 http fetch GET 200 https://registry.npmjs.org/react 140ms (cache miss)
+43 silly fetch manifest react-redux@*
+44 http fetch GET 200 https://registry.npmjs.org/react-redux 84ms (cache miss)
+45 silly fetch manifest @types/react@^16.8 || ^17.0 || ^18.0
+46 http fetch GET 200 https://registry.npmjs.org/@types%2freact 177ms (cache miss)
+47 silly fetch manifest @types/react-dom@^16.8 || ^17.0 || ^18.0
+48 http fetch GET 200 https://registry.npmjs.org/@types%2freact-dom 112ms (cache miss)
+49 silly fetch manifest react-dom@^18.2.0
+50 http fetch GET 200 https://registry.npmjs.org/react-dom 542ms (cache miss)
+51 silly fetch manifest react-native@>=0.59
+52 http fetch GET 200 https://registry.npmjs.org/react-native 743ms (cache miss)
+53 silly fetch manifest redux@^4 || ^5.0.0-beta.0
+54 http fetch GET 200 https://registry.npmjs.org/redux 137ms (cache miss)
+55 silly placeDep ROOT @babel/plugin-proposal-private-property-in-object@ REPLACE for: frontend@0.1.0 want: ^1.0.6
+56 silly placeDep ROOT @reduxjs/toolkit@1.9.7 OK for: frontend@0.1.0 want: *
+57 silly fetch manifest redux@^4.2.1
+58 silly fetch manifest redux-thunk@^2.4.2
+59 silly fetch manifest reselect@^4.1.8
+60 silly placeDep ROOT react-redux@8.1.3 OK for: frontend@0.1.0 want: *
+61 silly fetch manifest @types/hoist-non-react-statics@^3.3.1
+62 silly fetch manifest @types/use-sync-external-store@^0.0.3
+63 silly fetch manifest hoist-non-react-statics@^3.3.2
+64 silly fetch manifest react-is@^18.0.0
+65 silly fetch manifest use-sync-external-store@^1.0.0
+66 http fetch GET 200 https://registry.npmjs.org/redux-thunk 155ms (cache miss)
+67 http fetch GET 200 https://registry.npmjs.org/@types%2fuse-sync-external-store 279ms (cache miss)
+68 http fetch GET 200 https://registry.npmjs.org/@types%2fhoist-non-react-statics 280ms (cache miss)
+69 http fetch GET 200 https://registry.npmjs.org/hoist-non-react-statics 287ms (cache miss)
+70 http fetch GET 200 https://registry.npmjs.org/reselect 293ms (cache miss)
+71 http fetch GET 200 https://registry.npmjs.org/use-sync-external-store 384ms (cache miss)
+72 http fetch GET 200 https://registry.npmjs.org/react-is 433ms (cache miss)
+73 timing idealTree:#root Completed in 3467ms
+74 timing idealTree:node_modules/@babel/plugin-proposal-private-property-in-object Completed in 0ms
+75 timing idealTree:node_modules/@babel/preset-env Completed in 0ms
+76 silly placeDep ROOT redux@4.2.1 OK for: @reduxjs/toolkit@1.9.7 want: ^4.2.1
+77 silly placeDep ROOT redux-thunk@2.4.2 OK for: @reduxjs/toolkit@1.9.7 want: ^2.4.2
+78 silly placeDep ROOT reselect@4.1.8 OK for: @reduxjs/toolkit@1.9.7 want: ^4.1.8
+79 timing idealTree:node_modules/@reduxjs/toolkit Completed in 7ms
+80 silly fetch manifest react@^16.8 || ^17.0 || ^18.0
+81 silly placeDep ROOT @types/hoist-non-react-statics@3.3.4 OK for: react-redux@8.1.3 want: ^3.3.1
+82 silly fetch manifest hoist-non-react-statics@^3.3.0
+83 silly placeDep ROOT @types/use-sync-external-store@0.0.3 OK for: react-redux@8.1.3 want: ^0.0.3
+84 silly placeDep ROOT hoist-non-react-statics@3.3.2 OK for: react-redux@8.1.3 want: ^3.3.2
+85 silly fetch manifest react-is@^16.7.0
+86 silly placeDep node_modules/react-redux react-is@18.2.0 OK for: react-redux@8.1.3 want: ^18.0.0
+87 silly placeDep ROOT use-sync-external-store@1.2.0 OK for: react-redux@8.1.3 want: ^1.0.0
+88 timing idealTree:node_modules/react-redux Completed in 25ms
+89 timing idealTree:node_modules/@types/hoist-non-react-statics Completed in 0ms
+90 timing idealTree:node_modules/@types/use-sync-external-store Completed in 0ms
+91 silly placeDep node_modules/hoist-non-react-statics react-is@16.13.1 OK for: hoist-non-react-statics@3.3.2 want: ^16.7.0
+92 timing idealTree:node_modules/hoist-non-react-statics Completed in 2ms
+93 silly fetch manifest typescript@^3.2.1 || ^4
+94 http fetch GET 200 https://registry.npmjs.org/typescript 690ms (cache miss)
+95 silly placeDep ROOT typescript@4.9.5 REPLACE for: react-scripts@5.0.1 want: ^3.2.1 || ^4
+96 timing idealTree:node_modules/react-scripts Completed in 762ms
+97 timing idealTree:node_modules/redux Completed in 0ms
+98 timing idealTree:node_modules/redux-thunk Completed in 0ms
+99 timing idealTree:node_modules/reselect Completed in 0ms
+100 timing idealTree:node_modules/typescript Completed in 0ms
+101 timing idealTree:node_modules/use-sync-external-store Completed in 0ms
+102 timing idealTree:node_modules/hoist-non-react-statics/node_modules/react-is Completed in 0ms
+103 timing idealTree:node_modules/react-redux/node_modules/react-is Completed in 0ms
+104 timing idealTree:buildDeps Completed in 4266ms
+105 timing idealTree:fixDepFlags Completed in 22ms
+106 timing idealTree Completed in 5175ms
+107 timing command:install Completed in 5185ms
+108 verbose type range
+109 verbose stack @babel/plugin-proposal-private-property-in-object: No matching version found for @babel/plugin-proposal-private-property-in-object@^1.0.6.
+109 verbose stack     at module.exports (/Users/camis/.nvm/versions/node/v18.18.0/lib/node_modules/npm/node_modules/npm-pick-manifest/lib/index.js:209:23)
+109 verbose stack     at RegistryFetcher.manifest (/Users/camis/.nvm/versions/node/v18.18.0/lib/node_modules/npm/node_modules/pacote/lib/registry.js:119:22)
+109 verbose stack     at async #nodeFromEdge (/Users/camis/.nvm/versions/node/v18.18.0/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:1049:19)
+109 verbose stack     at async #buildDepStep (/Users/camis/.nvm/versions/node/v18.18.0/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:917:11)
+109 verbose stack     at async Arborist.buildIdealTree (/Users/camis/.nvm/versions/node/v18.18.0/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:196:7)
+109 verbose stack     at async Promise.all (index 1)
+109 verbose stack     at async Arborist.reify (/Users/camis/.nvm/versions/node/v18.18.0/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:159:5)
+109 verbose stack     at async Install.exec (/Users/camis/.nvm/versions/node/v18.18.0/lib/node_modules/npm/lib/commands/install.js:152:5)
+109 verbose stack     at async module.exports (/Users/camis/.nvm/versions/node/v18.18.0/lib/node_modules/npm/lib/cli-entry.js:61:5)
+110 verbose cwd /Users/camis/Desktop/ChasAcademy/u09-avancerad-javascript/frontend
+111 verbose Darwin 23.0.0
+112 verbose node v18.18.0
+113 verbose npm  v10.2.1
+114 error code ETARGET
+115 error notarget No matching version found for @babel/plugin-proposal-private-property-in-object@^1.0.6.
+116 error notarget In most cases you or one of your dependencies are requesting
+116 error notarget a package version that doesn't exist.
+117 verbose exit 1
+118 timing npm Completed in 5487ms
+119 verbose unfinished npm timer reify 1698670350760
+120 verbose unfinished npm timer reify:loadTrees 1698670350765
+121 verbose code 1
+122 error A complete log of this run can be found in: /Users/camis/Desktop/ChasAcademy/u09-avancerad-javascript/frontend/"/Users/camis/.npm/_logs/2023-10-30T12_52_30_458Z-debug-0.log
