@@ -8,7 +8,81 @@ const ShoppingCart = () => {
     <div>
       <Navbar />
       <div className="max-w-screen font-poppins overflow-hidden ">
-        <section className="relative z-10 bg-gradient-to-br from-purple-100 py-20 sm:px-20 sm:py-40">
+        <section className="relative z-10 bg-white py-20 sm:px-20 sm:py-40">
+        <div className="flex flex-col items-center border-b bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32">
+          <a href="/" className="text-2xl font-bold text-gray-800">
+            VARUKORG
+          </a>
+          <div className="mt-4 py-2 text-xs sm:mt-0 sm:ml-auto sm:text-base">
+            <div className="relative">
+              <ul className="relative flex w-full items-center justify-between space-x-2 sm:space-x-4">
+                <li className="flex items-center space-x-3 text-left sm:space-x-4">
+                  <a
+                    href="/ShoppingCart"
+                    class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-600 text-xs font-semibold text-white ring ring-gray-600 ring-offset-2">
+                    
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </a>
+                  <span class="font-semibold text-gray-900">Shop</span>
+                </li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 text-gray-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+                <li class="flex items-center space-x-3 text-left sm:space-x-4">
+                  <a
+                    href="/delivery"
+                    class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-400 text-xs font-semibold text-white">
+                    2
+                  </a>
+                  <span class="font-semibold text-gray-900">Shipping</span>
+                </li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 text-gray-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+                <li class="flex items-center space-x-3 text-left sm:space-x-4">
+                  <a
+                    href="/"
+                    class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-400 text-xs font-semibold text-white">
+                    3
+                  </a>
+                  <span class="font-semibold text-gray-500">Payment</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
                 <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white">
                   <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10">
                     <h2 className="text-xl font-semibold">Varukorg</h2>
@@ -220,7 +294,7 @@ const ShoppingCart = () => {
                         className="px-6 py-2 border rounded-md border-purple-500">
                         Fortsätt shoppa
                       </Link>
-                      <Link to="/"
+                      <Link to="/delivery"
                         className="px-6 py-2 border rounded-md bg-purple-800 hover:bg-purple-500 text-white">
                         <span className="sr-only sm:not-sr-only">
                         Till kassan

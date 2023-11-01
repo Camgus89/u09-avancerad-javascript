@@ -14,6 +14,7 @@ import { UserContextProvider } from "./context/userContext";
 import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import ShoppingCart from "./Components/Pages/ShoppingCart/ShoppingCart";
 import WhishList from "./Components/Pages/WhishList/WhishList";
+import Delivery from "./Components/Pages/Delivery/Delivery";
 
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = "true";
@@ -33,6 +34,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/shoppingcart" element={<ShoppingCart />} />
           <Route path="/whishlist" element={<WhishList />} />
+          <Route path="/delivery" element={<Delivery />} />
         </Routes>
       </BrowserRouter>
       {/* <CookieParser
