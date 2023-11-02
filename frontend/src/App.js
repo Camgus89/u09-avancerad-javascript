@@ -15,6 +15,7 @@ import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import ShoppingCart from "./Components/Pages/ShoppingCart/ShoppingCart";
 import WhishList from "./Components/Pages/WhishList/WhishList";
 import Delivery from "./Components/Pages/Delivery/Delivery";
+import Logout from "./Components/Pages/Logout/Logout";
 
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = "true";
@@ -35,6 +36,7 @@ function App() {
           <Route path="/shoppingcart" element={<ShoppingCart />} />
           <Route path="/whishlist" element={<WhishList />} />
           <Route path="/delivery" element={<Delivery />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
       </BrowserRouter>
       {/* <CookieParser

@@ -90,9 +90,25 @@ const getProfile = (req, res) => {
   }
   }
 
+  // Logout endpoint
+const logoutUser = (req, res) => {
+  // Här kan du utföra de nödvändiga åtgärderna för att logga ut användaren, till exempel:
+  // - Rensa användarens sessionsdata
+  // - Återställ autentiseringsstatus
+  // - Ta bort JWT-tokenet från användarens cookie (om du använder JWT för autentisering)
+
+  // Exempel: Ta bort JWT-tokenet från användarens cookie
+  res.clearCookie('token');
+
+  // Omdirigera användaren till startsidan eller någon annan sida
+  res.redirect('/logout');
+};
+
+
 module.exports = {
   test,
   registerUser,
   loginUser,
   getProfile,
+  logoutUser,
 };

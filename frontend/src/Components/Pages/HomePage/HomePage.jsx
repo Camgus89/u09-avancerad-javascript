@@ -11,7 +11,6 @@ const HomePage = () => {
   return (
     <>
     <Navbar/> 
-   
     <Herosection />
     <SearchBar/>
     {/* <Features /> */}

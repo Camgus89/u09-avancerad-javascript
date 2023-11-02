@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FaShoppingBasket, FaRegHeart, FaRegUser } from "react-icons/fa";
+import { FaDoorOpen, FaShoppingBasket, FaRegHeart, FaRegUser } from "react-icons/fa";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -68,6 +68,12 @@ const Navbar = () => {
             </Link>
             <Link to="/shoppingcart">
               <FaShoppingBasket
+                size={30}
+                className="p-1.5 mt-2 mr-2 text-white hover:text-purple-500"
+              />
+            </Link>
+            <Link to="/logout">
+              <FaDoorOpen
                 size={30}
                 className="p-1.5 mt-2 mr-2 text-white hover:text-purple-500"
               />
