@@ -37,7 +37,7 @@ const Products = () => {
                 to="#"
                 className="bg-purple-700 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-base font-normal text-white hover:bg-purple-500 sm:px-10 lg:px-8 xl:px-10"
                 >
-                Välj alternativ
+                Lägg i varukorg
             </Link>
           </div>
         </div>
@@ -66,7 +66,7 @@ const Products = () => {
                 to="#"
                 className="bg-purple-700 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-base font-normal text-white hover:bg-purple-500 sm:px-10 lg:px-8 xl:px-10"
                 >
-                Välj alternativ
+                Lägg i varukorg
             </Link>
           </div>
         </div>
@@ -95,7 +95,7 @@ const Products = () => {
                 to="#"
                 className="bg-purple-700 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-base font-normal text-white hover:bg-purple-500 sm:px-10 lg:px-8 xl:px-10"
                 >
-                Välj alternativ
+                Lägg i varukorg
             </Link>
           </div>
         </div>
@@ -124,7 +124,7 @@ const Products = () => {
                 to="#"
                 className="bg-purple-700 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-base font-normal text-white hover:bg-purple-500 sm:px-10 lg:px-8 xl:px-10"
                 >
-                Välj alternativ
+                Lägg i varukorg
             </Link>
           </div>
         </div>
