@@ -1,5 +1,4 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../../context/userContext";
 import Navbar from "../../Navigation/Navbar";
 import Footer from "../../Footer/Footer";
@@ -7,6 +6,13 @@ import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  useEffect(() => {
+    // När komponenten laddas, sätt inloggade användare baserat på user-context
+    setLoggedInUser(user);
+  }, [user]);
+
   return (
     <div>
       <Navbar />
@@ -18,7 +24,7 @@ const Dashboard = () => {
                 <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]">
                   <div className="mb-10 text-center md:mb-16">
                     <h1 className="text-black mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
-                    {!!user && <p> HEJ {user.name}! </p>}
+                    {!!loggedInUser && <p> HEJ {loggedInUser.name}! </p>}
                     </h1>
                   </div>
                   <Link
