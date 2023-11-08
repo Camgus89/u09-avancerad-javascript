@@ -7,7 +7,11 @@ import Review from "../../Review/Review";
 import Footer from "../../Footer/Footer";
 import SearchBar from '../../SearchBar/SearchBar';
 
+
 const HomePage = () => {
+
+
+
   return (
     <>
     <Navbar/> 
