@@ -41,7 +41,8 @@ function App() {
           <Route path="/delivery" element={<Delivery />} />
           <Route path="/logout" element={<Logout />} />
           <Route exact path="/" component={Products} />
-          <Route path="/product/:productId" element={<ProductDetail />} />
+          <Route path="/productdetail/:productId" element={<ProductDetail />} />
+
         </Routes>
       </BrowserRouter>
       {/* <CookieParser

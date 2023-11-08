@@ -5,9 +5,15 @@ const mongoose = require('mongoose');
 const app = express();
 const cookieParser = require('cookie-parser');
 
+const allowedOrigin = 'http://localhost:3000'; // Ersätt med den faktiska URL:en till din frontend
+
+app.use(
+  cors({
+    origin: allowedOrigin, // Tillåt endast begäranden från din frontend
+    credentials: true, // Tillåt autentiseringsuppgifter i begäranden
+  })
+);
 const productController = require('./controllers/productController');
-
-
 
 // Database connection
 mongoose.connect(process.env.MONGO_URL)
