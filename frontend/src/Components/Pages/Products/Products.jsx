@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  
 
   useEffect(() => {
     axios.get('http://localhost:8000/products')

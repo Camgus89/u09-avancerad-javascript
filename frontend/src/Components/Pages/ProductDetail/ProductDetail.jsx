@@ -35,7 +35,7 @@ function ProductDetail() {
                     </h2>
                     <p>{product.image}</p>
                     <p>Smak: {product.flavor}</p>
-                    <p>Pris: {product.price}</p>
+                    <p>Pris: {product.price}kr</p>
                     <p>Beskrivning: {product.description}</p>
                   </div>
                 </div>

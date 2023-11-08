@@ -31,6 +31,12 @@ app.get('/products/:productId', productController.getProductById);
 app.put('/products/:productId', productController.updateProduct);
 app.delete('/products/:productId', productController.deleteProduct);
 
+// Ange sökvägen till din bildmapp
+// const imagePath = path.join(__dirname, 'images');
+
+// Skapa en route för att serva bilder
+// app.use('/images', express.static(imagePath));
+
 app.use('/', require('./routes/authRoutes'))
 
 const port = 8000;
