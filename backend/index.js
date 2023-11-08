@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 const app = express();
 const cookieParser = require('cookie-parser');
 
+const productController = require('./controllers/productController');
+
+
 
 // Database connection
 mongoose.connect(process.env.MONGO_URL)
@@ -16,6 +19,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({extended: false}))
 
+app.post('/products', productController.createProduct);
+app.get('/products', productController.getAllProducts);
+app.get('/products/:productId', productController.getProductById);
+app.put('/products/:productId', productController.updateProduct);
+app.delete('/products/:productId', productController.deleteProduct);
 
 app.use('/', require('./routes/authRoutes'))
 
