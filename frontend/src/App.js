@@ -20,8 +20,6 @@ import ProductDetail from "./Components/Pages/ProductDetail/ProductDetail";
 import Products from "./Components/Pages/Products/Products"; // Importera Products-komponenten här
 import ScrollToTopOnPageChange from "./Components/Pages/ScrollToTopOnPageChange/ScrollToTopOnPageChange"; // Importera komponenten
 
-
-
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = "true";
 
@@ -29,7 +27,8 @@ function App() {
   return (
     <UserContextProvider>
       <BrowserRouter>
-      <ScrollToTopOnPageChange /> {/* Placera komponenten högst upp i din komponentträd */}
+        <ScrollToTopOnPageChange />{" "}
+        {/* Placera komponenten högst upp i din komponentträd */}
         <Toaster position="bottom-right" toastOptions={{ duration: 2000 }} />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -45,7 +44,6 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route exact path="/" component={Products} />
           <Route path="/productdetail/:productId" element={<ProductDetail />} />
-
         </Routes>
       </BrowserRouter>
       {/* <CookieParser
