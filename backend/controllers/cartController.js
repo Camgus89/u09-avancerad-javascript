@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Product = require('../models/Product'); // Importera din Product-modell
 
 exports.addToCart = async (req, res) => {
   try {
@@ -10,7 +11,7 @@ exports.addToCart = async (req, res) => {
 
     // Skapa en ny post i varukorgen
     const newCartItem = {
-      productId: productId,
+      product: productId,
       quantity: quantity,
     };
 
@@ -83,15 +84,21 @@ exports.updateCartItem = async (req, res) => {
   }
 };
 
-// Hämta alla
 exports.getAllCartItems = async (req, res) => {
   try {
     const userID = req.params.userID;
 
-    const user = await User.findById(userID); // Hitta användaren i databasen
+    // Hämta användaren
+    const user = await User.findById(userID).populate({
+      path: 'products.product',
+      model: 'Product'
+    });
 
-    // Hämta alla produkter i varukorgen
-    const cartItems = user.products;
+    // Hämta produkterna i varukorgen
+    const cartItems = user.products.map(cartItem => ({
+      productInfo: cartItem.product,
+      quantity: cartItem.quantity
+    }));
 
     res.status(200).json(cartItems);
   } catch (error) {
@@ -99,3 +106,6 @@ exports.getAllCartItems = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
+
+

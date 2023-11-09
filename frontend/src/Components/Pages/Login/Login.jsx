@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import axios from "axios";
 import Navbar from "../../Navigation/Navbar";
 import Footer from "../../Footer/Footer";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { create } from "zustand";
+import { UserContext } from "../../../context/userContext";
 
 const useAuthStore = create((set) => ({
   email: "",
@@ -16,6 +17,8 @@ const useAuthStore = create((set) => ({
 const Login = () => {
   const navigate = useNavigate();
   const { email, password, setEmail, setPassword } = useAuthStore();
+  const { setUser } = useContext(UserContext); // Hämta setUser från context
+
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -29,6 +32,7 @@ const Login = () => {
       } else {
         setEmail(""); // Återställ e-post
         setPassword(""); // Återställ lösenord
+        setUser(data); // Uppdatera användaren i context
         navigate("/dashboard");
       }
     } catch (error) {

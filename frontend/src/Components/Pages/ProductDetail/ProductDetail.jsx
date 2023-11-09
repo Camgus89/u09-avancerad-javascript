@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../../Navigation/Navbar";
 import Footer from "../../Footer/Footer";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../../context/userContext";
 
 function ProductDetail() {
+  const { user } = useContext(UserContext);
   const { productId } = useParams();
   const [product, setProduct] = useState({});
 
@@ -22,9 +24,9 @@ function ProductDetail() {
 
   const addToCart = () => {
     // Skicka en POST-förfrågan för att lägga till produkten i varukorgen
-    axios.post(`http://localhost:8000/cart`, { productId: product.id })
+    axios.post(`http://localhost:8000/cart/${user._id}`, { productId: product._id })
       .then((response) => {
-        // Handla om det gick bra, t.ex. visa en bekräftelse
+        console.log(response)
       })
       .catch((error) => {
         console.error(error);
@@ -60,12 +62,12 @@ function ProductDetail() {
                   <p>Smak: {product.flavor}</p>
                   <p className="font-bold">{product.price}kr</p>
 
-                  <Link
+                  {user._id && (<Link
                     to="/ShoppingCart"
                     onClick={addToCart} // Anropa funktionen för att lägga till i varukorg
                     className="bg-purple-700 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-base font-normal text-white hover:bg-purple-500 sm:px-10 lg:px-8 xl:px-10">
                     Lägg i varukorg
-                  </Link>
+                  </Link>)}
                 </div>
               </div>
             </div>
