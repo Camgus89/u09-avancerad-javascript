@@ -20,6 +20,17 @@ function ProductDetail() {
       });
   }, [productId]);
 
+  const addToCart = () => {
+    // Skicka en POST-förfrågan för att lägga till produkten i varukorgen
+    axios.post(`http://localhost:8000/cart`, { productId: product.id })
+      .then((response) => {
+        // Handla om det gick bra, t.ex. visa en bekräftelse
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div>
       <Navbar />
@@ -51,6 +62,7 @@ function ProductDetail() {
 
                   <Link
                     to="/ShoppingCart"
+                    onClick={addToCart} // Anropa funktionen för att lägga till i varukorg
                     className="bg-purple-700 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-base font-normal text-white hover:bg-purple-500 sm:px-10 lg:px-8 xl:px-10">
                     Lägg i varukorg
                   </Link>

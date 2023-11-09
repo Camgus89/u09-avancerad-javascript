@@ -4,7 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const app = express();
 const cookieParser = require('cookie-parser');
-
+const productController = require('./controllers/productController');
+const cartController = require('./controllers/cartController');
 const allowedOrigin = 'http://localhost:3000'; // Ersätt med den faktiska URL:en till din frontend
 
 app.use(
@@ -13,7 +14,7 @@ app.use(
     credentials: true, // Tillåt autentiseringsuppgifter i begäranden
   })
 );
-const productController = require('./controllers/productController');
+
 
 // Database connection
 mongoose.connect(process.env.MONGO_URL)
@@ -31,11 +32,10 @@ app.get('/products/:productId', productController.getProductById);
 app.put('/products/:productId', productController.updateProduct);
 app.delete('/products/:productId', productController.deleteProduct);
 
-// Ange sökvägen till din bildmapp
-// const imagePath = path.join(__dirname, 'images');
-
-// Skapa en route för att serva bilder
-// app.use('/images', express.static(imagePath));
+app.post('/cart/:userID', cartController.addToCart);
+app.get('/cart/:userID', cartController.getAllCartItems);
+app.put('/cart/:userID', cartController.updateCartItem);
+app.delete('/cart/:productId/:userID', cartController.removeFromCart);
 
 app.use('/', require('./routes/authRoutes'))
 

@@ -7,7 +7,11 @@ const userSchema = new Schema({
         type: String,
         unique: true
     },
-    password: String
+    password: String,
+    products: [{
+        product: { type: Schema.Types.ObjectId, ref: 'Product' },
+        quantity: Number
+    }],
 })
 
 const UserModel = mongoose.model('User', userSchema);
