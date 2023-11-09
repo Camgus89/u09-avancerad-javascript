@@ -3,7 +3,7 @@ const { hashPassword, comparePassword } = require('../helpers/auth');
 const jwt = require('jsonwebtoken');
 
 const test = (req, res) => {
-  res.json("test is working");
+  res.json("Hej backend");
 };
 
 // Register endpoint
