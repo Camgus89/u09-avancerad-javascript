@@ -16,7 +16,7 @@ const WhishList = () => {
                     <h1 className="text-black mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                       You wish, i wish! 
                     </h1>
-                    <h2>Make a VapeList instead!</h2>
+                    <h2>Make a VapeList!</h2>
                   </div>
 
                   <div className="mb-10">
