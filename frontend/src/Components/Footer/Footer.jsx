@@ -16,7 +16,7 @@ const Footer = () => {
           skräddarsydda för att passa dina unika preferenser. 
           </p>
         </div>
-        <div className="text-white sm:w-[900px] sm:ml-[18%] sm:mr-[12%] sm:pt-0">
+        {/* <div className="text-white sm:w-[900px] sm:ml-[18%] sm:mr-[12%] sm:pt-0">
           <div>
             <p className="sm:w-[30rem] md:text-4xl sm:text-3xl text-center text-2xl font-bold py-2">
             Prenumerera på vårt nyhetsbrev
@@ -40,7 +40,7 @@ const Footer = () => {
               </span>
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
       {/* footer top section end */}
       <div className="sm:mx-auto pt-10 pb-8 sm:grid flex-row lg:grid-cols-3 w-screen gap-8 text-gray-300 bg-gray-800 ">

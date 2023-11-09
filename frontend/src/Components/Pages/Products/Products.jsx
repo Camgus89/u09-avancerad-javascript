@@ -7,7 +7,7 @@ const Products = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/products")
+      .get("https://vapehouse-service-camilla.onrender.com/products")
       .then((response) => {
         setProducts(response.data);
       })

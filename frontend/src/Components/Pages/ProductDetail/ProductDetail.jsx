@@ -13,7 +13,7 @@ function ProductDetail() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/products/${productId}`)
+      .get(`https://vapehouse-service-camilla.onrender.com/products/${productId}`)
       .then((response) => {
         setProduct(response.data);
       })
@@ -24,7 +24,7 @@ function ProductDetail() {
 
   const addToCart = () => {
     // Skicka en POST-förfrågan för att lägga till produkten i varukorgen
-    axios.post(`http://localhost:8000/cart/${user._id}`, { productId: product._id })
+    axios.post(`https://vapehouse-service-camilla.onrender.com/cart/${user._id}`, { productId: product._id })
       .then((response) => {
         console.log(response)
       })

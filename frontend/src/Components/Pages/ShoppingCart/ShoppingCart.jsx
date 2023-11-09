@@ -6,12 +6,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../context/userContext";
 
 const ShoppingCart = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const [products, setProducts] = useState([]);
 
   const removeFromCart = (productId) => {
     axios
-      .delete(`http://localhost:8000/cart/${productId}/${user._id}`)
+      .delete(`https://vapehouse-service-camilla.onrender.com/cart/${productId}/${user._id}`)
       .then((response) => {
         console.log("Response data after deletion:", response.data);
 
@@ -27,7 +27,7 @@ const ShoppingCart = () => {
 
   const updateQuantity = (productId, newQuantity) => {
     axios
-      .put(`http://localhost:8000/cart/${productId}/${user._id}`, {
+      .put(`https://vapehouse-service-camilla.onrender.com/cart/${productId}/${user._id}`, {
         quantity: newQuantity,
       })
       .then((response) => {
@@ -50,7 +50,7 @@ const ShoppingCart = () => {
   useEffect(() => {
     if (user && user._id) {
       axios
-        .get(`http://localhost:8000/cart/${user._id}`)
+        .get(`https://vapehouse-service-camilla.onrender.com/cart/${user._id}`)
         .then((response) => {
           console.log(response.data);
 

@@ -20,7 +20,7 @@ import ProductDetail from "./Components/Pages/ProductDetail/ProductDetail";
 import Products from "./Components/Pages/Products/Products"; // Importera Products-komponenten här
 import ScrollToTopOnPageChange from "./Components/Pages/ScrollToTopOnPageChange/ScrollToTopOnPageChange"; // Importera komponenten
 
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = "https://vapehouse-service-camilla.onrender.com";
 axios.defaults.withCredentials = "true";
 
 function App() {
