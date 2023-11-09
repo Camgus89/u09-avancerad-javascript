@@ -35,6 +35,10 @@ exports.removeFromCart = async (req, res) => {
 
     const user = await User.findById(userID); // Hitta användaren i databasen
 
+    if (!user) {
+      return res.status(404).json({ message: "Användaren hittades inte" });
+    }
+
     // Hitta index för produktposten som ska tas bort
     const indexToRemove = user.products.findIndex(
       (item) => item.productId === productId
@@ -54,6 +58,7 @@ exports.removeFromCart = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
 
 // Uppdatera en produkt i varukorgen
 exports.updateCartItem = async (req, res) => {

@@ -62,7 +62,7 @@ function ProductDetail() {
                   <p>Smak: {product.flavor}</p>
                   <p className="font-bold">{product.price}kr</p>
 
-                  {user._id && (<Link
+                  {user && (<Link
                     to="/ShoppingCart"
                     onClick={addToCart} // Anropa funktionen för att lägga till i varukorg
                     className="bg-purple-700 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-base font-normal text-white hover:bg-purple-500 sm:px-10 lg:px-8 xl:px-10">

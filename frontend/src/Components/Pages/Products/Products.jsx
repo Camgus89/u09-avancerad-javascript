@@ -33,20 +33,24 @@ const Products = () => {
             {products.map((product) => (
               <div key={product._id} className="w-full px-4 md:w-1/2 xl:w-1/3">
                 <div className="mb-10 overflow-hidden rounded-lg bg-white">
-                  <img
-                    src={`/image/APPLE`}
-                    alt={product.name}
+                  {/* <img
+                    src={`/image/${product.productName.toLowerCase()}.jpeg`}
+
+                    alt={product.productName}
                     className="w-full"
-                  />
+                  /> */}
                   <div className="p-8 text-center sm:p-9 md:p-7 xl:p-9">
                     <h3>
                       <Link
                         to={`/productdetail/${product._id}`} 
                         className="text-dark hover:text-primary mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]">
-                        {product.name}
+                        {product.productName}
                       </Link>
                     </h3>
                     <p className="text-body-color mb-7 text-base leading-relaxed">
+                      {product.flavor}
+                    </p>
+                    <p className="text-body-color font-bold mb-7 text-base leading-relaxed">
                       {product.price} kr
                     </p>
                     <Link

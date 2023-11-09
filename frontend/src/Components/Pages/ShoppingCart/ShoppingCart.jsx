@@ -6,37 +6,41 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../context/userContext";
 
 const ShoppingCart = () => {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const [products, setProducts] = useState([]);
 
-  const removeFromCart = (productId) => {
+const removeFromCart = (productId) => {
+  axios
+    .delete(`http://localhost:8000/cart/${productId}/${user._id}`)
+    .then((response) => {
+      console.log("Response data after deletion:", response.data);
+
+      // Uppdatera state för att visa ändringar visuellt
+      setProducts((prevProducts) =>
+        prevProducts.filter((product) => product.productInfo._id !== productId)
+      );
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+useEffect(() => {
+  if (user && user._id) {
     axios
-      .delete(`http://localhost:8000/cart/${productId}/${user._id}`)
+      .get(`http://localhost:8000/cart/${user._id}`)
       .then((response) => {
-        //fungerar ej -  för att du inte uppdaterar user context!
-        console.log(response)
-        setProducts((prevProducts) =>
-          prevProducts.filter((product) => product._id !== productId)
-        );
+        console.log(response.data);
+
+        // Uppdatera state för att visa ändringar visuellt
+        setProducts(response.data);
       })
       .catch((error) => {
         console.error(error);
       });
-  };
+  }
+}, [user]);
 
-  useEffect(() => {
-    if (user && user._id) {
-      axios
-        .get(`http://localhost:8000/cart/${user._id}`)
-        .then((response) => {
-          console.log(response.data);
-          setProducts(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  }, [user]);
 
   return (
     <div>
@@ -49,14 +53,16 @@ const ShoppingCart = () => {
               <ul className="flex flex-col divide-y divide-gray-700">
                 {products.map((product) => (
                   <li
-                    key={product._id}
+                  key={product._id}
+
                     className="flex flex-col py-6 sm:flex-row sm:justify-between">
                     <div className="flex w-full space-x-2 sm:space-x-4">
-                      {/* <img
-                      className="flex-shrink-0 object-cover w-20 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
-                      src="" // Lägg till produktens bild här
-                      alt="Polaroid camera"
-                    /> */}
+                    {/* <img
+  src={`/images/${product.productName.toLowerCase()}.jpeg`}
+  alt={product.productName}
+  className="w-full"
+/> */}
+
                       <div className="flex flex-col justify-between w-full pb-4">
                         <div className="flex justify-between w-full pb-2 space-x-2">
                           <div className="space-y-1">
