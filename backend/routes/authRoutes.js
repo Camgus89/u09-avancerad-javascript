@@ -7,10 +7,10 @@ const { test, registerUser, loginUser, getProfile } = require('../controllers/au
 // Middleware
 router.use(
     cors({
-        credentials: true,
-        origin: 'http://localhost:3000/'
+      origin: 'https://vapehousealvsjo.netlify.app',
+      credentials: true,
     })
-)
+  );
 
 router.get('/', test)
 router.post('/register', registerUser)
