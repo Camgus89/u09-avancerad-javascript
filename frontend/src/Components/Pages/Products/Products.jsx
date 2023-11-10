@@ -7,7 +7,7 @@ const Products = () => {
 
   useEffect(() => {
     axios
-      .get("https://vapehouse-service-camilla.onrender.com/products")
+      .get("https://vapehouse-service-camilla.onrender.com/products", { withCredentials: true })
       .then((response) => {
         setProducts(response.data);
       })
