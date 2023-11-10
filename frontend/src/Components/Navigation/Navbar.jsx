@@ -65,11 +65,7 @@ const Navbar = () => {
 
         <div className={`${open ? null : "hidden"} `}>
           <div className="p-3 space-y-2 w-60 bg-black text-gray-100">
-            <div className="flex items-center p-2 space-x-4">
-              <div>
-                <h2 className="text-lg font-semibold">Leroy Jenkins</h2>
-              </div>
-            </div>
+    
             <div className="divide-y divide-purple-950">
               <ul className="pt-2 pb-4 space-y-1 text-sm">
                 <li>

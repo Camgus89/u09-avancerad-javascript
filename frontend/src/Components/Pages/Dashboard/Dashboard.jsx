@@ -19,7 +19,6 @@ const Dashboard = () => {
   const [loggedInUser, setLoggedInUser] = useState('');
 
   useEffect(() => {
-    // När komponenten laddas, sätt inloggade användare baserat på user-context
     setLoggedInUser(user);
   }, [user]);
   console.log(user)
