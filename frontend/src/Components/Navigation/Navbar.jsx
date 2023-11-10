@@ -4,7 +4,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import {
   FaDoorOpen,
   FaShoppingBasket,
-  // FaRegHeart,
   FaRegUser,
 } from "react-icons/fa";
 
@@ -27,31 +26,25 @@ const Navbar = () => {
               VapeHouse Älvsjö
             </span>
             <div className="flex">
-            <Link to="/login">
-              <FaRegUser
-                size={28}
-                className="p-1 mt-1 ml-3 text-white hover:text-purple-500"
-              />
-            </Link>
-            {/* <Link to="/whishlist">
-              <FaRegHeart
-                size={28}
-                className="p-1.5 mt-2 ml-1 text-white hover:text-purple-500"
-              />
-            </Link> */}
-            <Link to="/shoppingcart">
-              <FaShoppingBasket
-                size={28}
-                className="p-1 mt-1 ml-3 text-white hover:text-purple-500"
-              />
-            </Link>
-            <Link to="/logout">
-              <FaDoorOpen
-                size={28}
-                className="p-1 mt-1 ml-4 text-white hover:text-purple-500"
-              />
-            </Link>
-          </div>
+              <Link to="/login">
+                <FaRegUser
+                  size={28}
+                  className="p-1 mt-1 ml-3 text-white hover:text-purple-500"
+                />
+              </Link>
+              <Link to="/shoppingcart">
+                <FaShoppingBasket
+                  size={28}
+                  className="p-1 mt-1 ml-3 text-white hover:text-purple-500"
+                />
+              </Link>
+              <Link to="/logout">
+                <FaDoorOpen
+                  size={28}
+                  className="p-1 mt-1 ml-4 text-white hover:text-purple-500"
+                />
+              </Link>
+            </div>
           </Link>
           <div className="flex">
             <ul className="sm:flex justify-center hidden">
@@ -66,32 +59,6 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          {/* <div className="flex">
-            <Link to="/login">
-              <FaRegUser
-                size={30}
-                className="p-1.5 mt-2 mr-1 text-white hover:text-purple-500"
-              />
-            </Link>
-            <Link to="/whishlist">
-              <FaRegHeart
-                size={30}
-                className="p-1.5 mt-2 mr-1 text-white hover:text-purple-500"
-              />
-            </Link>
-            <Link to="/shoppingcart">
-              <FaShoppingBasket
-                size={30}
-                className="p-1.5 mt-2 mr-1 text-white hover:text-purple-500"
-              />
-            </Link>
-            <Link to="/logout">
-              <FaDoorOpen
-                size={30}
-                className="p-1.5 mt-2 mr-1 text-white hover:text-purple-500"
-              />
-            </Link>
-          </div> */}
         </div>
 
         {/* desktop nav end */}
@@ -168,7 +135,7 @@ const Navbar = () => {
                 <li>
                   <a
                     rel="noopener noreferrer"
-                    href="/"
+                    href="/logout"
                     className="flex items-center p-2 space-x-3 rounded-md hover:text-purple-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
