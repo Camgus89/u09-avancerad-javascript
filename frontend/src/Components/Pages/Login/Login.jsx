@@ -19,14 +19,15 @@ const Login = () => {
   const { email, password, setEmail, setPassword } = useAuthStore();
   const { setUser } = useContext(UserContext); // Hämta setUser från context
 
-
   const loginUser = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/login", {
-        email,
-        password,
-      });
+      const { data } = await axios.post(
+        "/login",
+        { email, password },
+        { withCredentials: true }
+      );
+
       if (data.error) {
         toast.error(data.error);
       } else {
@@ -88,16 +89,14 @@ const Login = () => {
                   </ul>
                   <a
                     href="/"
-                    className="mb-2 inline-block text-base text-[#adadad] hover.text-purple-800 hover:underline"
-                  >
+                    className="mb-2 inline-block text-base text-[#adadad] hover.text-purple-800 hover:underline">
                     Glömt lösenord?
                   </a>
                   <p className="text-base text-[#adadad]">
                     <span className="pr-0.5">Inte medlem? </span>
                     <a
                       href="/register"
-                      className="hover.underline text-purple-800"
-                    >
+                      className="hover.underline text-purple-800">
                       Registrera dig
                     </a>
                   </p>
