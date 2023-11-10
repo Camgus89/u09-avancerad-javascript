@@ -9,7 +9,7 @@ const cartController = require('./controllers/cartController');
 const allowedOrigin = 'https://vapehousealvsjo.netlify.app/'; // Ersätt med den faktiska URL:en till din frontend
 
 const corsOptions = {
-  origin: process.env.FRONTEND_URL, // Update to match your frontend origin
+  origin: 'https://vapehousealvsjo.netlify.app', // Replace with your actual frontend URL
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Allow credentials (cookies, headers, etc.)
   preflightContinue: false,
