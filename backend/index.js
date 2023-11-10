@@ -8,19 +8,15 @@ const productController = require('./controllers/productController');
 const cartController = require('./controllers/cartController');
 const allowedOrigin = 'https://vapehousealvsjo.netlify.app/'; // Ersätt med den faktiska URL:en till din frontend
 
-app.use(
-  cors({
-    origin: allowedOrigin,
-    credentials: true,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    headers: 'Origin,X-Requested-With,Content-Type,Accept,Authorization',
-  })
-);
+const corsOptions = {
+  origin: process.env.FRONTEND_URL, // Update to match your frontend origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Allow credentials (cookies, headers, etc.)
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+};
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Credentials', true);
-  next();
-});
+app.use(cors(corsOptions));
 
 
 
