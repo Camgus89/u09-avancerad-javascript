@@ -29,19 +29,19 @@ const Navbar = () => {
               <Link to="/login">
                 <FaRegUser
                   size={28}
-                  className="p-1 mt-1 ml-3 text-white hover:text-purple-500"
+                  className="p-1 mt-1 text-white hover:text-purple-500"
                 />
               </Link>
               <Link to="/shoppingcart">
                 <FaShoppingBasket
                   size={28}
-                  className="p-1 mt-1 ml-3 text-white hover:text-purple-500"
+                  className="p-1 mt-1 ml-2 text-white hover:text-purple-500"
                 />
               </Link>
               <Link to="/logout">
                 <FaDoorOpen
                   size={28}
-                  className="p-1 mt-1 ml-4 text-white hover:text-purple-500"
+                  className="p-1 mt-1 ml-2 text-white hover:text-purple-500"
                 />
               </Link>
             </div>
