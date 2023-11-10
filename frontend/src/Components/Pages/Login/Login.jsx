@@ -17,7 +17,7 @@ const useAuthStore = create((set) => ({
 const Login = () => {
   const navigate = useNavigate();
   const { email, password, setEmail, setPassword } = useAuthStore();
-  const { setUser } = useContext(UserContext); // Hämta setUser från context
+  const { setUser } = useContext(UserContext); 
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -31,9 +31,9 @@ const Login = () => {
       if (data.error) {
         toast.error(data.error);
       } else {
-        setEmail(""); // Återställ e-post
-        setPassword(""); // Återställ lösenord
-        setUser(data); // Uppdatera användaren i context
+        setEmail("");
+        setPassword(""); 
+        setUser(data);
         navigate("/dashboard");
       }
     } catch (error) {
@@ -83,10 +83,6 @@ const Login = () => {
                       />
                     </div>
                   </form>
-                  <p className="mb-6 text-base text-[#adadad]">Logga in med:</p>
-                  <ul className="-mx-2 mb-12 flex justify-between">
-                    {/* Dina sociala inloggningssymboler här */}
-                  </ul>
                   <a
                     href="/"
                     className="mb-2 inline-block text-base text-[#adadad] hover.text-purple-800 hover:underline">
