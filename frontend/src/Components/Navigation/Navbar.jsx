@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import {
   FaDoorOpen,
   FaShoppingBasket,
-  FaRegHeart,
+  // FaRegHeart,
   FaRegUser,
 } from "react-icons/fa";
 
