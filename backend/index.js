@@ -6,7 +6,7 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const productController = require('./controllers/productController');
 const cartController = require('./controllers/cartController');
-const allowedOrigin = 'http://localhost:3000'; // Ersätt med den faktiska URL:en till din frontend
+const allowedOrigin = 'https://vapehousealvsjo.netlify.app/'; // Ersätt med den faktiska URL:en till din frontend
 
 app.use(
   cors({

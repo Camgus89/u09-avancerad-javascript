@@ -8,7 +8,7 @@ const { test, registerUser, loginUser, getProfile } = require('../controllers/au
 router.use(
     cors({
         credentials: true,
-        origin: 'http://localhost:3000'
+        origin: 'https://vapehousealvsjo.netlify.app/'
     })
 )
 
