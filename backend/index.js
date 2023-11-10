@@ -10,7 +10,7 @@ const allowedOrigin = 'https://vapehousealvsjo.netlify.app/'; // Ersätt med den
 
 app.use(
   cors({
-    origin: allowedOrigin, // Tillåt endast begäranden från din frontend
+    origin: '*', // Tillåt endast begäranden från din frontend
     credentials: true, // Tillåt autentiseringsuppgifter i begäranden
   })
 );
