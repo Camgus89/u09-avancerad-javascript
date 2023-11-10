@@ -15,7 +15,7 @@ const ShoppingCart = () => {
       .then((response) => {
         console.log("Response data after deletion:", response.data);
 
-        // Uppdatera state för att visa ändringar visuellt
+  
         setProducts((prevProducts) =>
           prevProducts.filter((product) => product.productInfo._id !== productId)
         );
@@ -33,7 +33,7 @@ const ShoppingCart = () => {
       .then((response) => {
         console.log("Response data after quantity update:", response.data);
 
-        // Uppdatera state för att visa ändringar visuellt
+  
         setProducts((prevProducts) =>
           prevProducts.map((product) =>
             product.productInfo._id === productId
@@ -54,7 +54,7 @@ const ShoppingCart = () => {
         .then((response) => {
           console.log(response.data);
 
-          // Uppdatera state för att visa ändringar visuellt
+      
           setProducts(response.data);
         })
         .catch((error) => {

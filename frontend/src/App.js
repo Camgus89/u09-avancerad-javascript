@@ -5,7 +5,6 @@ import "./App.css";
 // import CookieParser from "react-cookie-consent";
 import HomePage from "./Components/Pages/HomePage/HomePage";
 import About from "./Components/Pages/About/About";
-// import Services from "./Components/Pages/Services/Services";
 import Contact from "./Components/Pages/Contact/Contact";
 import Login from "./Components/Pages/Login/Login";
 import Register from "./Components/Pages/Register/Register";
@@ -17,7 +16,7 @@ import WhishList from "./Components/Pages/WhishList/WhishList";
 import Delivery from "./Components/Pages/Delivery/Delivery";
 import Logout from "./Components/Pages/Logout/Logout";
 import ProductDetail from "./Components/Pages/ProductDetail/ProductDetail";
-import Products from "./Components/Pages/Products/Products"; // Importera Products-komponenten här
+import Products from "./Components/Pages/Products/Products";
 import ScrollToTopOnPageChange from "./Components/Pages/ScrollToTopOnPageChange/ScrollToTopOnPageChange"; // Importera komponenten
 
 axios.defaults.baseURL = "https://vapehouse-service-camilla.onrender.com";
@@ -28,12 +27,10 @@ function App() {
     <UserContextProvider>
       <BrowserRouter>
         <ScrollToTopOnPageChange />{" "}
-        {/* Placera komponenten högst upp i din komponentträd */}
         <Toaster position="bottom-right" toastOptions={{ duration: 2000 }} />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/services" element={<Services />} /> */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

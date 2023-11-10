@@ -5,10 +5,10 @@ function ScrollToTopOnPageChange() {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Rulla till toppen av sidan när "location" ändras
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  return null; // Detta är en funktionskomponent som inte renderar något synligt
+  return null;
 }
 
 export default ScrollToTopOnPageChange;

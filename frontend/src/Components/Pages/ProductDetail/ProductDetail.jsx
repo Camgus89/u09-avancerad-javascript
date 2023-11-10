@@ -23,7 +23,6 @@ function ProductDetail() {
   }, [productId]);
 
   const addToCart = () => {
-    // Skicka en POST-förfrågan för att lägga till produkten i varukorgen
     axios.post(`https://vapehouse-service-camilla.onrender.com/cart/${user._id}`, { productId: product._id })
       .then((response) => {
         console.log(response)
@@ -42,12 +41,12 @@ function ProductDetail() {
             <div className="flex flex-wrap">
               <div className="w-full md:w-1/2 px-4">
                 {" "}
-                {/* Dela sidan i två kolumner */}
+        
                 <div className="max-w-[525px] overflow-hidden rounded-lg bg-white">
                   <img
-                    src={product.image} // Använd produktens bild
-                    alt={product.productName} // Använd produktens namn
-                    className="w-full" // Gör bilden fullbredd
+                    src={product.image}
+                    alt={product.productName} 
+                    className="w-full"
                   />
                 </div>
               </div>
@@ -64,7 +63,7 @@ function ProductDetail() {
 
                   {user && (<Link
                     to="/ShoppingCart"
-                    onClick={addToCart} // Anropa funktionen för att lägga till i varukorg
+                    onClick={addToCart}
                     className="bg-purple-700 inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-base font-normal text-white hover:bg-purple-500 sm:px-10 lg:px-8 xl:px-10">
                     Lägg i varukorg
                   </Link>)}

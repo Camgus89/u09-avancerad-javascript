@@ -1,20 +1,17 @@
-import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Navbar from '../../Navigation/Navbar';
-import Footer from '../../Footer/Footer';
-import { UserContext } from '../../../context/userContext';
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../../Navigation/Navbar";
+import Footer from "../../Footer/Footer";
+import { UserContext } from "../../../context/userContext";
 
 const Logout = () => {
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Här kan du utföra logiken för att logga ut användaren
-    // Till exempel, nollställ användarens kontext
     setUser(null);
 
-    // Omdirigera användaren till inloggningssidan efter utloggning
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
@@ -33,8 +30,7 @@ const Logout = () => {
                   </div>
                   <button
                     onClick={handleLogout}
-                    className="hover:bg-purple-500 my-1 mr-4 inline-block rounded bg-purple-700 py-4 px-6 text-base font-medium text-white transition hover:bg-opacity-100 md:px-9 lg:px-6 xl:px-9"
-                  >
+                    className="hover:bg-purple-500 my-1 mr-4 inline-block rounded bg-purple-700 py-4 px-6 text-base font-medium text-white transition hover:bg-opacity-100 md:px-9 lg:px-6 xl:px-9">
                     Ja, Logga ut mig
                   </button>
                 </div>
@@ -46,6 +42,6 @@ const Logout = () => {
       <Footer />
     </div>
   );
-}
+};
 
 export default Logout;

@@ -31,9 +31,9 @@ const Register = () => {
       if (data.error) {
         toast.error(data.error);
       } else {
-        setName(""); // Återställ namn
-        setEmail(""); // Återställ e-post
-        setPassword(""); // Återställ lösenord
+        setName(""); 
+        setEmail(""); 
+        setPassword("");
         toast.success("Registreringen lyckades. Välkommen!");
         navigate("/login");
       }
