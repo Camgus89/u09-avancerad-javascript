@@ -3,8 +3,18 @@ import { UserContext } from "../../../context/userContext";
 import Navbar from "../../Navigation/Navbar";
 import Footer from "../../Footer/Footer";
 import { Link } from "react-router-dom";
+import dashBoardImage from "../../../images/dashboard.jpeg";
+
 
 const Dashboard = () => {
+
+  const dashBoardImageStyle = {
+    backgroundImage: `url(${dashBoardImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  };
+
   const { user } = useContext(UserContext);
   const [loggedInUser, setLoggedInUser] = useState('');
 
@@ -16,6 +26,9 @@ const Dashboard = () => {
   return (
     <div>
       <Navbar />
+      <div
+          className="relative pt-[120px] pb-[110px] lg:pt-[500px] bg-[#000000]"
+          style={dashBoardImageStyle}>
       <div className="max-w-screen font-poppins overflow-hidden ">
         <section className="relative z-10 py-20 ">
           <div className="container mx-auto">
@@ -38,6 +51,7 @@ const Dashboard = () => {
             </div>
           </div>
         </section>
+      </div>
       </div>
       <Footer />
     </div>
