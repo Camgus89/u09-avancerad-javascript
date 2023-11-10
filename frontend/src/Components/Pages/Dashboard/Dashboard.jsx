@@ -33,9 +33,9 @@ const Dashboard = () => {
           <div className="container mx-auto">
             <div className="-mx-4 flex flex-wrap">
               <div className="w-full px-4">
-                <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]">
+                <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-black py-16 px-10 text-center sm:px-12 md:px-[60px]">
                   <div className="mb-10 text-center md:mb-16">
-                    <h1 className="text-black mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
+                    <h1 className="text-grey-300 mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                     {loggedInUser && <p> HEJ {loggedInUser.name}! </p>}
                     </h1>
                   </div>
