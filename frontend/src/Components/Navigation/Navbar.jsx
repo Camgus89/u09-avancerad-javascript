@@ -13,42 +13,42 @@ const Navbar = () => {
 
   return (
     <div className="max-w-screen overflow-x-hidden font-poppins">
-      <nav className="bg-black fixed px-2 h-auto w-full lg:w-screen z-20 left-0 right-0 top-0 border-b border-purple-950">
+      <nav className="bg-black fixed px-3 h-auto w-full lg:w-screen z-20 left-0 right-0 top-0 border-b border-purple-950">
         {/* dektop nav */}
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:p-4 pb-2">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:p-4 pb-3 pt-3">
           <button onClick={() => setOpen(!open)} className="sm:hidden block">
             <GiHamburgerMenu
               size={40}
-              className="p-2 mt-2 mr-1 text-purple-500"
+              className="p-1 mt-2 mr-1 text-purple-500"
             />
           </button>
           <Link to="/" className="flex items-center">
-            <span className="mt-2 sm:mt-0 text-white font-semibold text-l mr-1 sm:ml-2">
+            <span className="mt-2 sm:mt-0 text-white font-semibold text-xl mr-1 sm:ml-2">
               VapeHouse Älvsjö
             </span>
             <div className="flex">
             <Link to="/login">
               <FaRegUser
                 size={28}
-                className="p-1.5 mt-2 ml-1 text-white hover:text-purple-500"
+                className="p-1 mt-1 ml-3 text-white hover:text-purple-500"
               />
             </Link>
-            <Link to="/whishlist">
+            {/* <Link to="/whishlist">
               <FaRegHeart
                 size={28}
                 className="p-1.5 mt-2 ml-1 text-white hover:text-purple-500"
               />
-            </Link>
+            </Link> */}
             <Link to="/shoppingcart">
               <FaShoppingBasket
                 size={28}
-                className="p-1.5 mt-2 ml-1 text-white hover:text-purple-500"
+                className="p-1 mt-1 ml-3 text-white hover:text-purple-500"
               />
             </Link>
             <Link to="/logout">
               <FaDoorOpen
                 size={28}
-                className="p-1.5 mt-2 m-1 text-white hover:text-purple-500"
+                className="p-1 mt-1 ml-4 text-white hover:text-purple-500"
               />
             </Link>
           </div>
