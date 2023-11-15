@@ -84,10 +84,10 @@ const Delivery = () => {
         <div class="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
           <div class="px-4 pt-8">
             <p class="text-xl font-medium">Order Summary</p>
-            <p class="text-gray-400">
+            {/* <p class="text-gray-400">
               Check your items. And select a suitable shipping method.
-            </p>
-            <div class="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
+            </p> */}
+            {/* <div class="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
               <div class="flex flex-col rounded-lg bg-white sm:flex-row">
                 <img
                   class="m-2 h-24 w-28 rounded-md border object-cover object-center"
@@ -116,7 +116,7 @@ const Delivery = () => {
                   <p class="mt-auto text-lg font-bold">$238.99</p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <p class="mt-8 text-lg font-medium">Shipping Methods</p>
             <form class="mt-5 grid gap-6">
@@ -308,7 +308,7 @@ const Delivery = () => {
                 />
               </div>
 
-              <div class="mt-6 border-t border-b py-2">
+              {/* <div class="mt-6 border-t border-b py-2">
                 <div class="flex items-center justify-between">
                   <p class="text-sm font-medium text-gray-900">Subtotal</p>
                   <p class="font-semibold text-gray-900">$399.00</p>
@@ -321,7 +321,7 @@ const Delivery = () => {
               <div class="mt-6 flex items-center justify-between">
                 <p class="text-sm font-medium text-gray-900">Total</p>
                 <p class="text-2xl font-semibold text-gray-900">$408.00</p>
-              </div>
+              </div> */}
             </div>
             <button class="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
               Place Order
