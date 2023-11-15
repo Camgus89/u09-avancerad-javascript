@@ -39,6 +39,8 @@ const Products = () => {
                     alt={product.productName}
                     className="w-full"
                   /> */}
+                        <img src={process.env.PUBLIC_URL + '/images/BLUEBERRY.png'} alt="Bild 1" />
+
                   <div className="p-8 text-center sm:p-9 md:p-7 xl:p-9">
                     <h3>
                       <Link
