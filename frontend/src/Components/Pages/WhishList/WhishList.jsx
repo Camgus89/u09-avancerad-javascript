@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../Navigation/Navbar";
 import Footer from "../../Footer/Footer";
+import {Link} from "react-router-dom";
 
 const WhishList = () => {
   return (
@@ -20,11 +21,13 @@ const WhishList = () => {
                   </div>
 
                   <div className="mb-10">
+                  <Link to="/login">
                     <input
                       type="submit"
                       value="Logga in"
                       className="bg-purple-800 hover.bg-purple-500 border-primary w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
                     />
+                    </Link>
                   </div>
                 </div>
               </div>
