@@ -18,6 +18,7 @@ import Logout from "./Components/Pages/Logout/Logout";
 import ProductDetail from "./Components/Pages/ProductDetail/ProductDetail";
 import Products from "./Components/Pages/Products/Products";
 import ScrollToTopOnPageChange from "./Components/Pages/ScrollToTopOnPageChange/ScrollToTopOnPageChange"; // Importera komponenten
+import Order from "./Components/Pages/Order/Order";
 
 axios.defaults.baseURL = "https://vapehouse-service-camilla.onrender.com";
 axios.defaults.withCredentials = "true";
@@ -39,6 +40,7 @@ function App() {
           <Route path="/whishlist" element={<WhishList />} />
           <Route path="/delivery" element={<Delivery />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/order" element={<Order />} />
           <Route exact path="/" component={Products} />
           <Route path="/productdetail/:productId" element={<ProductDetail />} />
         </Routes>
