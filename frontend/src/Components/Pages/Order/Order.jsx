@@ -27,7 +27,7 @@ const Order = () => {
                         to="/"
                         className="hover:bg-purple-500 my-1 mr-4 inline-block rounded bg-purple-700 py-4 px-6 text-base font-medium text-white transition hover:bg-opacity-100 md:px-9 lg:px-6 xl:px-9"
                       >
-                        Börja shoppa
+                        Fortsät shoppa
                       </Link>
                 </div>
               </div>
