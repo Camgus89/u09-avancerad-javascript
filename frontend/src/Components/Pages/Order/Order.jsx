@@ -20,7 +20,7 @@ const Order = () => {
                     <h1 className="text-white mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                     Stay Tuned!
                     </h1>
-                    <p className="text-white mb-6 text-[32px] uppercase sm:text-[40px] lg:text-[36px] l:text-[40px]">
+                    <p className="text-white mb-6 text-[22px] uppercase sm:text-[42px] lg:text-[36px] l:text-[40px]">
                     Tack för din Order</p>
                   </div>
                   <Link
