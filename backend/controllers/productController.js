@@ -1,5 +1,3 @@
-// controllers/productController.js
-
 const Product = require('../models/Product');
 
 // Skapa en ny produkt
@@ -44,8 +42,8 @@ exports.getProductById = async (req, res) => {
 // Uppdatera en produkt med ID
 exports.updateProduct = async (req, res) => {
     try {
-      const productId = req.params.productId; // Hämta productId från URL
-      const updatedProduct = req.body; // Uppdaterad produktdata
+      const productId = req.params.productId;
+      const updatedProduct = req.body;
   
       const product = await Product.findByIdAndUpdate(productId, updatedProduct, { new: true });
       if (!product) {
@@ -64,7 +62,7 @@ exports.deleteProduct = async (req, res) => {
     try {
       const productId = req.params.productId; // Hämta productId från URL
   
-      const product = await Product.findByIdAndRemove(productId);
+      const product = await Product.findByIdAndDelete(productId);
       if (!product) {
         res.status(404).json({ message: 'Produkten hittades inte' });
       } else {
