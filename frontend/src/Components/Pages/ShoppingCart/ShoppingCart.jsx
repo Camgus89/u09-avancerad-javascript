@@ -21,14 +21,19 @@ const ShoppingCart = () => {
       )
       .then((response) => {
         console.log("Response data after deletion:", response.data);
-
+  
         // Använd den uppdaterade listan från API:et direkt här
-        setProducts(response.data);
+        setProducts((prevProducts) =>
+          prevProducts.filter(
+            (product) => product.productInfo._id !== productId
+          )
+        );
       })
       .catch((error) => {
         console.error(error);
       });
   };
+  
 
   const updateQuantity = (productId, newQuantity) => {
     axios
