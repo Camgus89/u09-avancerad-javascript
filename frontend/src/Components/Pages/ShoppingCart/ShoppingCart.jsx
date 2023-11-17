@@ -75,25 +75,29 @@ const ShoppingCart = () => {
     }
   }, [user]);
   
-  const handleUpdateClick = async (productId, newQuantity) => {
-    try {
-      // Uppdatera kvantiteten på servern
-      await updateQuantity(productId, newQuantity);
-  
-      // Uppdatera bara den specifika produkten i state och localStorage med en callback-funktion
-      setProducts((prevProducts) => {
-        const updatedProducts = prevProducts.map((product) =>
-          product.productInfo._id === productId
-            ? { ...product, quantity: newQuantity }
-            : product
-        );
-        localStorage.setItem("cart", JSON.stringify(updatedProducts));
-        return updatedProducts;
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  };
+const handleUpdateClick = async (productId, newQuantity) => {
+  try {
+    // Uppdatera kvantiteten på servern
+    await updateQuantity(productId, newQuantity);
+
+    // Uppdatera bara den specifika produkten i state och localStorage
+    setProducts((prevProducts) => {
+      const updatedProducts = prevProducts.map((product) =>
+        product.productInfo._id === productId
+          ? { ...product, quantity: newQuantity }
+          : product
+      );
+      
+      // Uppdatera local storage med den uppdaterade produkten
+      localStorage.setItem("cart", JSON.stringify(updatedProducts));
+
+      return updatedProducts;
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
 
   
