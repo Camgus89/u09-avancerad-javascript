@@ -21,8 +21,7 @@ const ShoppingCart = () => {
       )
       .then((response) => {
         console.log("Response data after deletion:", response.data);
-  
-        // Använd den uppdaterade listan från API:et direkt här
+
         setProducts((prevProducts) =>
           prevProducts.filter(
             (product) => product.productInfo._id !== productId
@@ -33,7 +32,6 @@ const ShoppingCart = () => {
         console.error(error);
       });
   };
-  
 
   const updateQuantity = (productId, newQuantity) => {
     axios
@@ -59,6 +57,7 @@ const ShoppingCart = () => {
   useEffect(() => {
     if (user && user._id) {
       setProducts([]);
+
       axios
         .get(`https://vapehouse-service-camilla.onrender.com/cart/${user._id}`)
         .then((response) => {
