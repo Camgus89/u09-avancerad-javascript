@@ -31,8 +31,8 @@ const ShoppingCart = () => {
 
   const updateQuantity = (productId, newQuantity) => {
     axios
-      .put(
-        `https://vapehouse-service-camilla.onrender.com/cart/${productId}/${user._id}`,
+    .put(`https://vapehouse-service-camilla.onrender.com/cart/${productId}/${user._id}`,
+
         {
           quantity: newQuantity,
         }
