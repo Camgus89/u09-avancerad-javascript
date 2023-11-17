@@ -22,11 +22,8 @@ const ShoppingCart = () => {
       .then((response) => {
         console.log("Response data after deletion:", response.data);
 
-        setProducts((prevProducts) =>
-          prevProducts.filter(
-            (product) => product.productInfo._id !== productId
-          )
-        );
+        // Använd den uppdaterade listan från API:et direkt här
+        setProducts(response.data);
       })
       .catch((error) => {
         console.error(error);
