@@ -1,13 +1,13 @@
 const User = require("../models/user");
-const Product = require('../models/Product'); // Importera din Product-modell
+const Product = require('../models/Product');
 
 exports.addToCart = async (req, res) => {
   try {
-    const productId = req.body.productId; // Hämta productId från request body
-    const quantity = req.body.quantity || 1; // Antal att lägga till i varukorgen
+    const productId = req.body.productId; 
+    const quantity = req.body.quantity || 1; 
     const userID = req.params.userID;
 
-    const user = await User.findById(userID); // Hitta användaren i databasen
+    const user = await User.findById(userID); 
 
     // Skapa en ny post i varukorgen
     const newCartItem = {
@@ -15,10 +15,10 @@ exports.addToCart = async (req, res) => {
       quantity: quantity,
     };
 
-    // Lägg till den nya posten i användarens varukorg
+
     user.products.push(newCartItem);
 
-    // Spara användaren med den uppdaterade varukorgen i databasen
+
     await user.save();
 
     res.status(200).json({ message: "Produkt tillagd i varukorgen" });
@@ -30,10 +30,10 @@ exports.addToCart = async (req, res) => {
 
 exports.removeFromCart = async (req, res) => {
   try {
-    const productId = req.params.productId; // Hämta productId från URL
+    const productId = req.params.productId; 
     const userID = req.params.userID;
 
-    const user = await User.findById(userID); // Hitta användaren i databasen
+    const user = await User.findById(userID); 
 
     if (!user) {
       return res.status(404).json({ message: "Användaren hittades inte" });
@@ -49,7 +49,7 @@ exports.removeFromCart = async (req, res) => {
       user.products.splice(indexToRemove, 1);
     }
 
-    // Spara användaren med den uppdaterade varukorgen i databasen
+  
     await user.save();
 
     res.status(200).json({ message: "Produkt borttagen från varukorgen" });
@@ -63,23 +63,21 @@ exports.removeFromCart = async (req, res) => {
 // Uppdatera en produkt i varukorgen
 exports.updateCartItem = async (req, res) => {
   try {
-    const productId = req.params.productId; // Hämta productId från URL
-    const quantity = req.body.quantity; // Nytt antal för produkten
+    const productId = req.params.productId;
+    const quantity = req.body.quantity; 
     const userID = req.params.userID;
 
-    const user = await User.findById(userID); // Hitta användaren i databasen
+    const user = await User.findById(userID); 
 
-    // Hitta produktposten som ska uppdateras
     const itemToUpdate = user.products.find(
       (item) => item.productId === productId
     );
 
-    // Om produkten finns i varukorgen, uppdatera antalet
+
     if (itemToUpdate) {
       itemToUpdate.quantity = quantity;
     }
 
-    // Spara användaren med den uppdaterade varukorgen i databasen
     await user.save();
 
     res.status(200).json({ message: "Produkt i varukorgen uppdaterad" });

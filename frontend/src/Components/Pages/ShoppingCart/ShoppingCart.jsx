@@ -8,6 +8,7 @@ import { UserContext } from "../../../context/userContext";
 const ShoppingCart = () => {
   const { user } = useContext(UserContext);
   const [products, setProducts] = useState([]);
+  const [quantityToUpdate, setQuantityToUpdate] = useState(0); // Nytt state för att hålla reda på det aktuella antalet
 
   const removeFromCart = (productId) => {
     axios
@@ -71,7 +72,7 @@ const ShoppingCart = () => {
     try {
       // Anropa din funktion för att uppdatera kvantiteten på servern
       await updateQuantity(productId, newQuantity);
-  
+
       // Uppdatera frontendens lokala tillstånd efter en framgångsrik uppdatering
       setProducts((prevProducts) =>
         prevProducts.map((product) =>
@@ -80,12 +81,13 @@ const ShoppingCart = () => {
             : product
         )
       );
+
+      // Återställ det lokala state för quantityToUpdate
+      setQuantityToUpdate(0);
     } catch (error) {
       console.error(error);
     }
   };
-  
-  
 
   return (
     <div>
@@ -159,7 +161,7 @@ const ShoppingCart = () => {
                               Remove
                             </span>
                           </button>
-                          <button
+                          {/* <button
                             type="button"
                             className="flex items-center px-2 py-1 space-x-1">
                             <svg
@@ -169,33 +171,29 @@ const ShoppingCart = () => {
                               <path d="M453.122,79.012a128,128,0,0,0-181.087.068l-15.511,15.7L241.142,79.114l-.1-.1a128,128,0,0,0-181.02,0l-6.91,6.91a128,128,0,0,0,0,181.019L235.485,449.314l20.595,21.578.491-.492.533.533L276.4,450.574,460.032,266.94a128.147,128.147,0,0,0,0-181.019ZM437.4,244.313,256.571,425.146,75.738,244.313a96,96,0,0,1,0-135.764l6.911-6.91a96,96,0,0,1,135.713-.051l38.093,38.787,38.274-38.736a96,96,0,0,1,135.765,0l6.91,6.909A96.11,96.11,0,0,1,437.4,244.313Z"></path>
                             </svg>
                             <span>Add to favorites</span>
-                          </button>
+                          </button> */}
                           <div className="flex items-center px-2 py-1 space-x-1">
                             <span>Quantity:</span>
                             <input
-                    type="number"
-                    value={product.quantity}
-                    onChange={(e) =>
-                      setProducts((prevProducts) =>
-                        prevProducts.map((prevProduct) =>
-                          prevProduct.productInfo._id === product.productInfo._id
-                            ? { ...prevProduct, quantity: parseInt(e.target.value, 10) }
-                            : prevProduct
-                        )
-                      )
-                    }
-                  />
-                  <button
-                    type="button"
-                    className="bg-purple-700 text-white px-2 py-1 rounded"
-                    onClick={() =>
-                      handleUpdateClick(
-                        product.productInfo._id,
-                        parseInt(product.quantity, 10)
-                      )
-                    }>
-                    Uppdatera
-                  </button>
+                              type="number"
+                              value={quantityToUpdate}
+                              onChange={(e) =>
+                                setQuantityToUpdate(
+                                  parseInt(e.target.value, 10)
+                                )
+                              }
+                            />
+                            <button
+                              type="button"
+                              className="bg-purple-700 text-white px-2 py-1 rounded"
+                              onClick={() =>
+                                handleUpdateClick(
+                                  product.productInfo._id,
+                                  quantityToUpdate
+                                )
+                              }>
+                              Uppdatera
+                            </button>
                           </div>
                         </div>
                       </div>
