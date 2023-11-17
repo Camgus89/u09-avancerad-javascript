@@ -68,9 +68,16 @@ const ShoppingCart = () => {
   }, [user]);
 
   const handleUpdateClick = async (productId, newQuantity) => {
-    // Anropa din funktion för att uppdatera kvantiteten
-    updateQuantity(productId, newQuantity);
+    try {
+      // Anropa din funktion för att uppdatera kvantiteten på servern
+      await updateQuantity(productId, newQuantity);
+      
+      // Lämna detta tomt, eftersom du redan uppdaterar lokalt efter att anropet är framgångsrikt
+    } catch (error) {
+      console.error(error);
+    }
   };
+  
 
   return (
     <div>
@@ -158,26 +165,29 @@ const ShoppingCart = () => {
                           <div className="flex items-center px-2 py-1 space-x-1">
                             <span>Quantity:</span>
                             <input
-                              type="number"
-                              value={product.quantity}
-                              onChange={(e) =>
-                                handleUpdateClick(
-                                  product.productInfo._id,
-                                  parseInt(e.target.value, 10)
-                                )
-                              }
-                            />
-                            <button
-                              type="button"
-                              className="bg-purple-700 text-white px-2 py-1 rounded"
-                              onClick={() =>
-                                handleUpdateClick(
-                                  product.productInfo._id,
-                                  parseInt(product.quantity, 10)
-                                )
-                              }>
-                              Uppdatera
-                            </button>
+                    type="number"
+                    value={product.quantity}
+                    onChange={(e) =>
+                      setProducts((prevProducts) =>
+                        prevProducts.map((prevProduct) =>
+                          prevProduct.productInfo._id === product.productInfo._id
+                            ? { ...prevProduct, quantity: parseInt(e.target.value, 10) }
+                            : prevProduct
+                        )
+                      )
+                    }
+                  />
+                  <button
+                    type="button"
+                    className="bg-purple-700 text-white px-2 py-1 rounded"
+                    onClick={() =>
+                      handleUpdateClick(
+                        product.productInfo._id,
+                        parseInt(product.quantity, 10)
+                      )
+                    }>
+                    Uppdatera
+                  </button>
                           </div>
                         </div>
                       </div>
