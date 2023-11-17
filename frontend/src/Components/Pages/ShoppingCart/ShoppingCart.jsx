@@ -8,8 +8,6 @@ import { UserContext } from "../../../context/userContext";
 const ShoppingCart = () => {
   const { user } = useContext(UserContext);
   const [products, setProducts] = useState([]);
-  
-  // Skapa en state för att hålla antalet för varje produkt separat
   const [quantityToUpdate, setQuantityToUpdate] = useState({});
 
   const removeFromCart = (productId) => {
@@ -53,6 +51,47 @@ const ShoppingCart = () => {
       });
   };
 
+  const addToCart = (productId, quantity) => {
+    // Kontrollera om produkten redan finns i varukorgen
+    const existingProduct = products.find(
+      (product) => product.productInfo._id === productId
+    );
+
+    if (existingProduct) {
+      // Uppdatera antalet om produkten redan finns
+      const newQuantity = existingProduct.quantity + quantity;
+      updateQuantity(productId, newQuantity);
+
+      setQuantityToUpdate((prevQuantity) => ({
+        ...prevQuantity,
+        [productId]: newQuantity,
+      }));
+    } else {
+      // Lägg till ny post om produkten inte finns
+      axios
+        .post(`https://vapehouse-service-camilla.onrender.com/cart/${user._id}`, {
+          productId,
+          quantity,
+        })
+        .then((response) => {
+          console.log("Response data after adding to cart:", response.data);
+
+          setProducts((prevProducts) => [
+            ...prevProducts,
+            response.data.product,
+          ]);
+
+          setQuantityToUpdate((prevQuantity) => ({
+            ...prevQuantity,
+            [productId]: quantity,
+          }));
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  };
+
   useEffect(() => {
     if (user && user._id) {
       axios
@@ -61,7 +100,6 @@ const ShoppingCart = () => {
           console.log(response.data);
           setProducts(response.data);
 
-          // Skapa en objekt för antal för varje produkt när varukorgen hämtas
           const quantityObj = {};
           response.data.forEach((product) => {
             quantityObj[product.productInfo._id] = product.quantity;
@@ -78,7 +116,6 @@ const ShoppingCart = () => {
     try {
       await updateQuantity(productId, newQuantity);
 
-      // Uppdatera bara antalet för den specifika produkten
       setQuantityToUpdate((prevQuantity) => ({
         ...prevQuantity,
         [productId]: newQuantity,
@@ -160,12 +197,13 @@ const ShoppingCart = () => {
                               className="border border-black"
                               type="number"
                               value={quantityToUpdate[product.productInfo._id] || 0}
-                              onChange={(e) =>
+                              onChange={(e) => {
+                                const newQuantity = parseInt(e.target.value, 10);
                                 setQuantityToUpdate((prevQuantity) => ({
                                   ...prevQuantity,
-                                  [product.productInfo._id]: parseInt(e.target.value, 10),
-                                }))
-                              }
+                                  [product.productInfo._id]: newQuantity,
+                                }));
+                              }}
                             />
                             <button
                               type="button"
