@@ -9,10 +9,9 @@ const ShoppingCart = () => {
   const { user } = useContext(UserContext);
   const [products, setProducts] = useState([]);
   const [newQuantityToUpdate, setNewQuantityToUpdate] = useState(() => {
-    const storedQuantity = localStorage.getItem('newQuantityToUpdate');
+    const storedQuantity = localStorage.getItem("newQuantityToUpdate");
     return storedQuantity ? parseInt(storedQuantity, 10) : 0;
   });
-  
 
   const removeFromCart = (productId) => {
     axios
@@ -79,15 +78,14 @@ const ShoppingCart = () => {
             : product
         )
       );
-      localStorage.setItem('newQuantityToUpdate', newQuantity);
-      // setNewQuantityToUpdate(0);
+      localStorage.setItem("newQuantityToUpdate", newQuantity);
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    const storedQuantity = localStorage.getItem('newQuantityToUpdate');
+    const storedQuantity = localStorage.getItem("newQuantityToUpdate");
     if (storedQuantity) {
       setNewQuantityToUpdate(parseInt(storedQuantity, 10));
     }
@@ -188,7 +186,7 @@ const ShoppingCart = () => {
                                 )
                               }
                             />
-                            {/* <span>{newQuantityToUpdate}</span> */}
+
                             <button
                               type="button"
                               className="bg-purple-700 text-white px-2 py-1 rounded"
