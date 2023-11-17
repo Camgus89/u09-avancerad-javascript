@@ -75,12 +75,19 @@ const ShoppingCart = () => {
             : product
         )
       );
-
+      localStorage.setItem('newQuantityToUpdate', newQuantity);
       // setNewQuantityToUpdate(0);
     } catch (error) {
       console.error(error);
     }
   };
+
+  useEffect(() => {
+    const storedQuantity = localStorage.getItem('newQuantityToUpdate');
+    if (storedQuantity) {
+      setNewQuantityToUpdate(parseInt(storedQuantity, 10));
+    }
+  }, []);
 
   return (
     <div>
