@@ -56,8 +56,6 @@ const ShoppingCart = () => {
 
   useEffect(() => {
     if (user && user._id) {
-      setProducts([]);
-
       axios
         .get(`https://vapehouse-service-camilla.onrender.com/cart/${user._id}`)
         .then((response) => {
