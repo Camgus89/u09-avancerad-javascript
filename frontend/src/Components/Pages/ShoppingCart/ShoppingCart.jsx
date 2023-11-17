@@ -177,7 +177,7 @@ const ShoppingCart = () => {
                                 )
                               }
                             />
-                            <span>{newQuantityToUpdate}</span>
+                            {/* <span>{newQuantityToUpdate}</span> */}
                             <button
                               type="button"
                               className="bg-purple-700 text-white px-2 py-1 rounded"
