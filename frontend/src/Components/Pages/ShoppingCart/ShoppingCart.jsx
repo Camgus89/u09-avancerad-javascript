@@ -170,7 +170,7 @@ const ShoppingCart = () => {
                           </button> */}
                           <div className="flex items-center px-2 py-1 space-x-1">
                             <span>Quantity:</span>
-                            <input
+                            <input className="border border-black"
                               type="number"
                               value={newQuantityToUpdate}
                               onChange={(e) =>
