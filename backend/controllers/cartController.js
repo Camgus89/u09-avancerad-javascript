@@ -9,7 +9,6 @@ exports.addToCart = async (req, res) => {
 
     const user = await User.findById(userID); 
 
-    // Skapa en ny post i varukorgen
     const newCartItem = {
       product: productId,
       quantity: quantity,

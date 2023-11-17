@@ -8,7 +8,7 @@ import { UserContext } from "../../../context/userContext";
 const ShoppingCart = () => {
   const { user } = useContext(UserContext);
   const [products, setProducts] = useState([]);
-  const [quantityToUpdate, setQuantityToUpdate] = useState(0); // Nytt state för att hålla reda på det aktuella antalet
+  const [newQuantityToUpdate, setNewQuantityToUpdate] = useState(0);
 
   const removeFromCart = (productId) => {
     axios
@@ -31,8 +31,8 @@ const ShoppingCart = () => {
 
   const updateQuantity = (productId, newQuantity) => {
     axios
-    .put(`https://vapehouse-service-camilla.onrender.com/cart/${productId}/${user._id}`,
-
+      .put(
+        `https://vapehouse-service-camilla.onrender.com/cart/${productId}/${user._id}`,
         {
           quantity: newQuantity,
         }
@@ -59,7 +59,6 @@ const ShoppingCart = () => {
         .get(`https://vapehouse-service-camilla.onrender.com/cart/${user._id}`)
         .then((response) => {
           console.log(response.data);
-
           setProducts(response.data);
         })
         .catch((error) => {
@@ -70,10 +69,8 @@ const ShoppingCart = () => {
 
   const handleUpdateClick = async (productId, newQuantity) => {
     try {
-      // Anropa din funktion för att uppdatera kvantiteten på servern
       await updateQuantity(productId, newQuantity);
 
-      // Uppdatera frontendens lokala tillstånd efter en framgångsrik uppdatering
       setProducts((prevProducts) =>
         prevProducts.map((product) =>
           product.productInfo._id === productId
@@ -82,8 +79,7 @@ const ShoppingCart = () => {
         )
       );
 
-      // Återställ det lokala state för quantityToUpdate
-      setQuantityToUpdate(0);
+      setNewQuantityToUpdate(0);
     } catch (error) {
       console.error(error);
     }
@@ -176,9 +172,9 @@ const ShoppingCart = () => {
                             <span>Quantity:</span>
                             <input
                               type="number"
-                              value={quantityToUpdate}
+                              value={newQuantityToUpdate}
                               onChange={(e) =>
-                                setQuantityToUpdate(
+                                setNewQuantityToUpdate(
                                   parseInt(e.target.value, 10)
                                 )
                               }
@@ -189,7 +185,7 @@ const ShoppingCart = () => {
                               onClick={() =>
                                 handleUpdateClick(
                                   product.productInfo._id,
-                                  quantityToUpdate
+                                  newQuantityToUpdate
                                 )
                               }>
                               Uppdatera
