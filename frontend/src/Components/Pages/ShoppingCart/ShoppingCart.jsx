@@ -67,10 +67,20 @@ const ShoppingCart = () => {
     }
   }, [user]);
 
+  useEffect(() => {
+    if (user && user._id) {
+      // Hämta produkter från localStorage
+      const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+      setProducts(storedCart);
+    }
+  }, [user]);
+  
   const handleUpdateClick = async (productId, newQuantity) => {
     try {
+      // Uppdatera kvantiteten på servern
       await updateQuantity(productId, newQuantity);
-
+  
+      // Uppdatera bara den specifika produkten i state
       setProducts((prevProducts) =>
         prevProducts.map((product) =>
           product.productInfo._id === productId
@@ -78,18 +88,20 @@ const ShoppingCart = () => {
             : product
         )
       );
-      localStorage.setItem("newQuantityToUpdate", newQuantity);
+  
+      // Uppdatera endast den specifika produkten i localStorage
+      const updatedProducts = products.map((product) =>
+        product.productInfo._id === productId
+          ? { ...product, quantity: newQuantity }
+          : product
+      );
+      localStorage.setItem("cart", JSON.stringify(updatedProducts));
     } catch (error) {
       console.error(error);
     }
   };
 
-  useEffect(() => {
-    const storedQuantity = localStorage.getItem("newQuantityToUpdate");
-    if (storedQuantity) {
-      setNewQuantityToUpdate(parseInt(storedQuantity, 10));
-    }
-  }, []);
+  
 
   return (
     <div>
