@@ -31,12 +31,9 @@ const ShoppingCart = () => {
 
   const updateQuantity = (productId, newQuantity) => {
     axios
-      .put(
-        `https://vapehouse-service-camilla.onrender.com/cart/${user._id}`,
-        {
-          quantity: newQuantity,
-        }
-      )
+      .put(`https://vapehouse-service-camilla.onrender.com/cart/${user._id}`, {
+        quantity: newQuantity,
+      })
       .then((response) => {
         console.log("Response data after quantity update:", response.data);
 
@@ -79,7 +76,7 @@ const ShoppingCart = () => {
         )
       );
 
-      setNewQuantityToUpdate(0);
+      // setNewQuantityToUpdate(0);
     } catch (error) {
       console.error(error);
     }
@@ -170,7 +167,8 @@ const ShoppingCart = () => {
                           </button> */}
                           <div className="flex items-center px-2 py-1 space-x-1">
                             <span>Quantity:</span>
-                            <input className="border border-black"
+                            <input
+                              className="border border-black"
                               type="number"
                               value={newQuantityToUpdate}
                               onChange={(e) =>
