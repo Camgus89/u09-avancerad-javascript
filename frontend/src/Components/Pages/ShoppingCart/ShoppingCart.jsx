@@ -167,6 +167,17 @@ const ShoppingCart = () => {
                                 )
                               }
                             />
+                            <button
+                              type="button"
+                              className="bg-purple-700 text-white px-2 py-1 rounded"
+                              onClick={() =>
+                                handleUpdateClick(
+                                  product.productInfo._id,
+                                  parseInt(product.quantity, 10)
+                                )
+                              }>
+                              Uppdatera
+                            </button>
                           </div>
                         </div>
                       </div>
