@@ -80,26 +80,21 @@ const ShoppingCart = () => {
       // Uppdatera kvantiteten på servern
       await updateQuantity(productId, newQuantity);
   
-      // Uppdatera bara den specifika produkten i state
-      setProducts((prevProducts) =>
-        prevProducts.map((product) =>
+      // Uppdatera bara den specifika produkten i state och localStorage med en callback-funktion
+      setProducts((prevProducts) => {
+        const updatedProducts = prevProducts.map((product) =>
           product.productInfo._id === productId
             ? { ...product, quantity: newQuantity }
             : product
-        )
-      );
-  
-      // Uppdatera endast den specifika produkten i localStorage
-      const updatedProducts = products.map((product) =>
-        product.productInfo._id === productId
-          ? { ...product, quantity: newQuantity }
-          : product
-      );
-      localStorage.setItem("cart", JSON.stringify(updatedProducts));
+        );
+        localStorage.setItem("cart", JSON.stringify(updatedProducts));
+        return updatedProducts;
+      });
     } catch (error) {
       console.error(error);
     }
   };
+
 
   
 
