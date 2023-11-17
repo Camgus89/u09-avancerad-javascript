@@ -8,7 +8,11 @@ import { UserContext } from "../../../context/userContext";
 const ShoppingCart = () => {
   const { user } = useContext(UserContext);
   const [products, setProducts] = useState([]);
-  const [quantityToUpdate, setQuantityToUpdate] = useState({});
+  const [newQuantityToUpdate, setNewQuantityToUpdate] = useState(() => {
+    const storedQuantity = localStorage.getItem('newQuantityToUpdate');
+    return storedQuantity ? parseInt(storedQuantity, 10) : 0;
+  });
+  
 
   const removeFromCart = (productId) => {
     axios
@@ -32,7 +36,6 @@ const ShoppingCart = () => {
   const updateQuantity = (productId, newQuantity) => {
     axios
       .put(`https://vapehouse-service-camilla.onrender.com/cart/${user._id}`, {
-        productId,
         quantity: newQuantity,
       })
       .then((response) => {
@@ -51,36 +54,6 @@ const ShoppingCart = () => {
       });
   };
 
-  const addToCart = async (productId, quantity) => {
-    try {
-      const existingProduct = products.find(
-        (product) => product.productInfo._id === productId
-      );
-
-      if (existingProduct) {
-        const newQuantity = existingProduct.quantity + quantity;
-        await updateQuantity(productId, newQuantity);
-      } else {
-        const response = await axios.post(
-          `https://vapehouse-service-camilla.onrender.com/cart/${user._id}`,
-          {
-            productId,
-            quantity,
-          }
-        );
-
-        setProducts((prevProducts) => [...prevProducts, response.data.product]);
-      }
-
-      setQuantityToUpdate((prevQuantity) => ({
-        ...prevQuantity,
-        [productId]: quantity,
-      }));
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   useEffect(() => {
     if (user && user._id) {
       axios
@@ -88,12 +61,6 @@ const ShoppingCart = () => {
         .then((response) => {
           console.log(response.data);
           setProducts(response.data);
-
-          const quantityObj = {};
-          response.data.forEach((product) => {
-            quantityObj[product.productInfo._id] = product.quantity;
-          });
-          setQuantityToUpdate(quantityObj);
         })
         .catch((error) => {
           console.error(error);
@@ -105,14 +72,26 @@ const ShoppingCart = () => {
     try {
       await updateQuantity(productId, newQuantity);
 
-      setQuantityToUpdate((prevQuantity) => ({
-        ...prevQuantity,
-        [productId]: newQuantity,
-      }));
+      setProducts((prevProducts) =>
+        prevProducts.map((product) =>
+          product.productInfo._id === productId
+            ? { ...product, quantity: newQuantity }
+            : product
+        )
+      );
+      localStorage.setItem('newQuantityToUpdate', newQuantity);
+      // setNewQuantityToUpdate(0);
     } catch (error) {
       console.error(error);
     }
   };
+
+  useEffect(() => {
+    const storedQuantity = localStorage.getItem('newQuantityToUpdate');
+    if (storedQuantity) {
+      setNewQuantityToUpdate(parseInt(storedQuantity, 10));
+    }
+  }, []);
 
   return (
     <div>
@@ -126,9 +105,14 @@ const ShoppingCart = () => {
                 {products.map((product) => (
                   <li
                     key={product._id}
-                    className="flex flex-col py-6 sm:flex-row sm:justify-between"
-                  >
+                    className="flex flex-col py-6 sm:flex-row sm:justify-between">
                     <div className="flex w-full space-x-2 sm:space-x-4">
+                      {/* <img
+                        src={`/images/${product.productName.toLowerCase()}.jpeg`}
+                        alt={product.productName}
+                        className="w-full"
+                      /> */}
+
                       <div className="flex flex-col justify-between w-full pb-4">
                         <div className="flex justify-between w-full pb-2 space-x-2">
                           <div className="space-y-1">
@@ -151,66 +135,69 @@ const ShoppingCart = () => {
                         <div className="flex text-sm divide-x">
                           <button
                             type="button"
-                            className="flex items-center px-2 py-1 pl-0 space-x-1"
-                          >
+                            className="flex items-center px-2 py-1 pl-0 space-x-1">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 512 512"
-                              className="w-4 h-4 fill-current"
-                            >
+                              className="w-4 h-4 fill-current">
                               <path d="M96,472a23.82,23.82,0,0,0,23.579,24H392.421A23.82,23.82,0,0,0,416,472V152H96Zm32-288H384V464H128Z"></path>
                               <rect
                                 width="32"
                                 height="200"
                                 x="168"
-                                y="216"
-                              ></rect>
+                                y="216"></rect>
                               <rect
                                 width="32"
                                 height="200"
                                 x="240"
-                                y="216"
-                              ></rect>
+                                y="216"></rect>
                               <rect
                                 width="32"
                                 height="200"
                                 x="312"
-                                y="216"
-                              ></rect>
+                                y="216"></rect>
                               <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
                             </svg>
                             <span
                               onClick={() => {
                                 removeFromCart(product.productInfo._id);
-                              }}
-                            >
+                              }}>
                               Remove
                             </span>
                           </button>
+                          {/* <button
+                            type="button"
+                            className="flex items-center px-2 py-1 space-x-1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 512 512"
+                              className="w-4 h-4 fill-current">
+                              <path d="M453.122,79.012a128,128,0,0,0-181.087.068l-15.511,15.7L241.142,79.114l-.1-.1a128,128,0,0,0-181.02,0l-6.91,6.91a128,128,0,0,0,0,181.019L235.485,449.314l20.595,21.578.491-.492.533.533L276.4,450.574,460.032,266.94a128.147,128.147,0,0,0,0-181.019ZM437.4,244.313,256.571,425.146,75.738,244.313a96,96,0,0,1,0-135.764l6.911-6.91a96,96,0,0,1,135.713-.051l38.093,38.787,38.274-38.736a96,96,0,0,1,135.765,0l6.91,6.909A96.11,96.11,0,0,1,437.4,244.313Z"></path>
+                            </svg>
+                            <span>Add to favorites</span>
+                          </button> */}
                           <div className="flex items-center px-2 py-1 space-x-1">
                             <span>Quantity:</span>
                             <input
                               className="border border-black"
                               type="number"
-                              value={quantityToUpdate[product.productInfo._id] || 0}
-                              onChange={(e) => {
-                                const newQuantity = parseInt(e.target.value, 10);
-                                setQuantityToUpdate((prevQuantity) => ({
-                                  ...prevQuantity,
-                                  [product.productInfo._id]: newQuantity,
-                                }));
-                              }}
+                              value={newQuantityToUpdate}
+                              onChange={(e) =>
+                                setNewQuantityToUpdate(
+                                  parseInt(e.target.value, 10)
+                                )
+                              }
                             />
+                            {/* <span>{newQuantityToUpdate}</span> */}
                             <button
                               type="button"
                               className="bg-purple-700 text-white px-2 py-1 rounded"
                               onClick={() =>
                                 handleUpdateClick(
                                   product.productInfo._id,
-                                  quantityToUpdate[product.productInfo._id] || 0
+                                  newQuantityToUpdate
                                 )
-                              }
-                            >
+                              }>
                               Uppdatera
                             </button>
                           </div>
@@ -223,14 +210,12 @@ const ShoppingCart = () => {
               <div className="flex justify-end space-x-4">
                 <Link
                   to="/"
-                  className="px-6 py-2 border rounded-md border-purple-500"
-                >
+                  className="px-6 py-2 border rounded-md border-purple-500">
                   Fortsätt shoppa
                 </Link>
                 <Link
                   to="/delivery"
-                  className="px-6 py-2 border rounded-md bg-purple-800 hover:bg-purple-500 text-white"
-                >
+                  className="px-6 py-2 border rounded-md bg-purple-800 hover:bg-purple-500 text-white">
                   <span className="sr-only sm:not-sr-only">Till kassan</span>
                 </Link>
               </div>
