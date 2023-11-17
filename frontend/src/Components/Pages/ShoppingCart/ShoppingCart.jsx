@@ -8,11 +8,9 @@ import { UserContext } from "../../../context/userContext";
 const ShoppingCart = () => {
   const { user } = useContext(UserContext);
   const [products, setProducts] = useState([]);
-  const [newQuantityToUpdate, setNewQuantityToUpdate] = useState(() => {
-    const storedQuantity = localStorage.getItem('newQuantityToUpdate');
-    return storedQuantity ? parseInt(storedQuantity, 10) : 0;
-  });
   
+  // Skapa en state för att hålla antalet för varje produkt separat
+  const [quantityToUpdate, setQuantityToUpdate] = useState({});
 
   const removeFromCart = (productId) => {
     axios
@@ -36,6 +34,7 @@ const ShoppingCart = () => {
   const updateQuantity = (productId, newQuantity) => {
     axios
       .put(`https://vapehouse-service-camilla.onrender.com/cart/${user._id}`, {
+        productId,
         quantity: newQuantity,
       })
       .then((response) => {
@@ -61,6 +60,13 @@ const ShoppingCart = () => {
         .then((response) => {
           console.log(response.data);
           setProducts(response.data);
+
+          // Skapa en objekt för antal för varje produkt när varukorgen hämtas
+          const quantityObj = {};
+          response.data.forEach((product) => {
+            quantityObj[product.productInfo._id] = product.quantity;
+          });
+          setQuantityToUpdate(quantityObj);
         })
         .catch((error) => {
           console.error(error);
@@ -72,26 +78,15 @@ const ShoppingCart = () => {
     try {
       await updateQuantity(productId, newQuantity);
 
-      setProducts((prevProducts) =>
-        prevProducts.map((product) =>
-          product.productInfo._id === productId
-            ? { ...product, quantity: newQuantity }
-            : product
-        )
-      );
-      localStorage.setItem('newQuantityToUpdate', newQuantity);
-      // setNewQuantityToUpdate(0);
+      // Uppdatera bara antalet för den specifika produkten
+      setQuantityToUpdate((prevQuantity) => ({
+        ...prevQuantity,
+        [productId]: newQuantity,
+      }));
     } catch (error) {
       console.error(error);
     }
   };
-
-  useEffect(() => {
-    const storedQuantity = localStorage.getItem('newQuantityToUpdate');
-    if (storedQuantity) {
-      setNewQuantityToUpdate(parseInt(storedQuantity, 10));
-    }
-  }, []);
 
   return (
     <div>
@@ -107,12 +102,6 @@ const ShoppingCart = () => {
                     key={product._id}
                     className="flex flex-col py-6 sm:flex-row sm:justify-between">
                     <div className="flex w-full space-x-2 sm:space-x-4">
-                      {/* <img
-                        src={`/images/${product.productName.toLowerCase()}.jpeg`}
-                        alt={product.productName}
-                        className="w-full"
-                      /> */}
-
                       <div className="flex flex-col justify-between w-full pb-4">
                         <div className="flex justify-between w-full pb-2 space-x-2">
                           <div className="space-y-1">
@@ -165,37 +154,26 @@ const ShoppingCart = () => {
                               Remove
                             </span>
                           </button>
-                          {/* <button
-                            type="button"
-                            className="flex items-center px-2 py-1 space-x-1">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                              className="w-4 h-4 fill-current">
-                              <path d="M453.122,79.012a128,128,0,0,0-181.087.068l-15.511,15.7L241.142,79.114l-.1-.1a128,128,0,0,0-181.02,0l-6.91,6.91a128,128,0,0,0,0,181.019L235.485,449.314l20.595,21.578.491-.492.533.533L276.4,450.574,460.032,266.94a128.147,128.147,0,0,0,0-181.019ZM437.4,244.313,256.571,425.146,75.738,244.313a96,96,0,0,1,0-135.764l6.911-6.91a96,96,0,0,1,135.713-.051l38.093,38.787,38.274-38.736a96,96,0,0,1,135.765,0l6.91,6.909A96.11,96.11,0,0,1,437.4,244.313Z"></path>
-                            </svg>
-                            <span>Add to favorites</span>
-                          </button> */}
                           <div className="flex items-center px-2 py-1 space-x-1">
                             <span>Quantity:</span>
                             <input
                               className="border border-black"
                               type="number"
-                              value={newQuantityToUpdate}
+                              value={quantityToUpdate[product.productInfo._id] || 0}
                               onChange={(e) =>
-                                setNewQuantityToUpdate(
-                                  parseInt(e.target.value, 10)
-                                )
+                                setQuantityToUpdate((prevQuantity) => ({
+                                  ...prevQuantity,
+                                  [product.productInfo._id]: parseInt(e.target.value, 10),
+                                }))
                               }
                             />
-                            {/* <span>{newQuantityToUpdate}</span> */}
                             <button
                               type="button"
                               className="bg-purple-700 text-white px-2 py-1 rounded"
                               onClick={() =>
                                 handleUpdateClick(
                                   product.productInfo._id,
-                                  newQuantityToUpdate
+                                  quantityToUpdate[product.productInfo._id] || 0
                                 )
                               }>
                               Uppdatera
