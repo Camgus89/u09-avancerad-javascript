@@ -71,12 +71,20 @@ const ShoppingCart = () => {
     try {
       // Anropa din funktion för att uppdatera kvantiteten på servern
       await updateQuantity(productId, newQuantity);
-      
-      // Lämna detta tomt, eftersom du redan uppdaterar lokalt efter att anropet är framgångsrikt
+  
+      // Uppdatera frontendens lokala tillstånd efter en framgångsrik uppdatering
+      setProducts((prevProducts) =>
+        prevProducts.map((product) =>
+          product.productInfo._id === productId
+            ? { ...product, quantity: newQuantity }
+            : product
+        )
+      );
     } catch (error) {
       console.error(error);
     }
   };
+  
   
 
   return (
