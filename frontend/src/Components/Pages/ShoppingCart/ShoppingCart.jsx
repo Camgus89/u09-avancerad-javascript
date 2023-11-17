@@ -8,7 +8,11 @@ import { UserContext } from "../../../context/userContext";
 const ShoppingCart = () => {
   const { user } = useContext(UserContext);
   const [products, setProducts] = useState([]);
-  const [newQuantityToUpdate, setNewQuantityToUpdate] = useState(0);
+  const [newQuantityToUpdate, setNewQuantityToUpdate] = useState(() => {
+    const storedQuantity = localStorage.getItem('newQuantityToUpdate');
+    return storedQuantity ? parseInt(storedQuantity, 10) : 0;
+  });
+  
 
   const removeFromCart = (productId) => {
     axios
