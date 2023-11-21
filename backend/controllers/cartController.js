@@ -1,22 +1,20 @@
 const User = require("../models/user");
-const Product = require('../models/Product');
+const Product = require("../models/Product");
 
 exports.addToCart = async (req, res) => {
   try {
-    const productId = req.body.productId; 
-    const quantity = req.body.quantity || 1; 
+    const productId = req.body.productId;
+    const quantity = req.body.quantity || 1;
     const userID = req.params.userID;
 
-    const user = await User.findById(userID); 
+    const user = await User.findById(userID);
 
     const newCartItem = {
       product: productId,
       quantity: quantity,
     };
 
-
     user.products.push(newCartItem);
-
 
     await user.save();
 
@@ -29,26 +27,23 @@ exports.addToCart = async (req, res) => {
 
 exports.removeFromCart = async (req, res) => {
   try {
-    const productId = req.params.productId; 
+    const productId = req.params.productId;
     const userID = req.params.userID;
 
-    const user = await User.findById(userID); 
+    const user = await User.findById(userID);
 
     if (!user) {
       return res.status(404).json({ message: "Användaren hittades inte" });
     }
 
-    // Hitta index för produktposten som ska tas bort
     const indexToRemove = user.products.findIndex(
       (item) => item.productId === productId
     );
 
-    // Om produkten finns i varukorgen, ta bort den
     if (indexToRemove !== -1) {
       user.products.splice(indexToRemove, 1);
     }
 
-  
     await user.save();
 
     res.status(200).json({ message: "Produkt borttagen från varukorgen" });
@@ -58,20 +53,17 @@ exports.removeFromCart = async (req, res) => {
   }
 };
 
-
-// Uppdatera en produkt i varukorgen
 exports.updateCartItem = async (req, res) => {
   try {
     const productId = req.params.productId;
-    const quantity = req.body.quantity; 
+    const quantity = req.body.quantity;
     const userID = req.params.userID;
 
-    const user = await User.findById(userID); 
+    const user = await User.findById(userID);
 
     const itemToUpdate = user.products.find(
       (item) => item.productId === productId
     );
-
 
     if (itemToUpdate) {
       itemToUpdate.quantity = quantity;
@@ -90,16 +82,14 @@ exports.getAllCartItems = async (req, res) => {
   try {
     const userID = req.params.userID;
 
-    // Hämta användaren
     const user = await User.findById(userID).populate({
-      path: 'products.product',
-      model: 'Product'
+      path: "products.product",
+      model: "Product",
     });
 
-    // Hämta produkterna i varukorgen
-    const cartItems = user.products.map(cartItem => ({
+    const cartItems = user.products.map((cartItem) => ({
       productInfo: cartItem.product,
-      quantity: cartItem.quantity
+      quantity: cartItem.quantity,
     }));
 
     res.status(200).json(cartItems);
@@ -108,6 +98,3 @@ exports.getAllCartItems = async (req, res) => {
     res.status(500).send(error);
   }
 };
-
-
-
