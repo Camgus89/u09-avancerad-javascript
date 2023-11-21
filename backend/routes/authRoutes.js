@@ -1,21 +1,23 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const cors = require('cors');
-const { test, registerUser, loginUser, getProfile } = require('../controllers/authController');
+const cors = require("cors");
+const {
+  test,
+  registerUser,
+  loginUser,
+  getProfile,
+} = require("../controllers/authController");
 
-
-// Middleware
 router.use(
-    cors({
-      origin: 'https://vapehousealvsjo.netlify.app',
-      credentials: true,
-    })
-  );
+  cors({
+    origin: "https://vapehousealvsjo.netlify.app",
+    credentials: true,
+  })
+);
 
-router.get('/', test)
-router.post('/register', registerUser)
-router.post('/login', loginUser)
-router.get('/profile', getProfile)
+router.get("/", test);
+router.post("/register", registerUser);
+router.post("/login", loginUser);
+router.get("/profile", getProfile);
 
-
-module.exports = router
+module.exports = router;
