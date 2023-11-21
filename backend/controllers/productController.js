@@ -60,7 +60,7 @@ exports.updateProduct = async (req, res) => {
 // Ta bort en produkt med ID
 exports.deleteProduct = async (req, res) => {
     try {
-      const productId = req.params.productId; // Hämta productId från URL
+      const productId = req.params.productId;
   
       const product = await Product.findByIdAndDelete(productId);
       if (!product) {
