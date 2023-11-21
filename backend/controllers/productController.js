@@ -1,6 +1,6 @@
 const Product = require('../models/Product');
 
-// Skapa en ny produkt
+
 exports.createProduct = async (req, res) => {
     try {
       const product = new Product(req.body);
@@ -12,7 +12,7 @@ exports.createProduct = async (req, res) => {
     }
   };
 
-// Hämta alla produkter
+
 exports.getAllProducts = async (req, res) => {
     try {
       const products = await Product.find();
@@ -23,10 +23,10 @@ exports.getAllProducts = async (req, res) => {
     }
   };
 
-// Hämta en produkt med ID
+
 exports.getProductById = async (req, res) => {
     try {
-      const productId = req.params.productId; // Hämta productId från URL
+      const productId = req.params.productId; 
       const product = await Product.findById(productId);
       if (!product) {
         res.status(404).json({ message: 'Produkten hittades inte' });
@@ -57,7 +57,7 @@ exports.updateProduct = async (req, res) => {
     }
   };
 
-// Ta bort en produkt med ID
+
 exports.deleteProduct = async (req, res) => {
     try {
       const productId = req.params.productId;
