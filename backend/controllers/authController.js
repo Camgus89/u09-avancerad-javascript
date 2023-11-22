@@ -1,6 +1,6 @@
 const User = require("../models/user");
-const { hashPassword, comparePassword } = require('../helpers/auth');
-const jwt = require('jsonwebtoken');
+const { hashPassword, comparePassword } = require("../helpers/auth");
+const jwt = require("jsonwebtoken");
 
 const test = (req, res) => {
   res.json("Hej backend");
@@ -49,61 +49,58 @@ const registerUser = async (req, res) => {
 // Login endpoint
 
 const loginUser = async (req, res) => {
-    try {
-        const {email, password} = req.body;
+  try {
+    const { email, password } = req.body;
 
-        // Check if user exists
-        const user = await User.findOne({email});
-        if(!user){
-            return res.json({
-                error: 'No user found'
-            })
-        }
-
-        //Check if passwords match 
-        const match = await comparePassword(password, user.password)
-        if(match) {
-            jwt.sign({email: user.email, id: user._id, name: user.name}, process.env.JWT_SECRET, {}, (err, token) => {
-                if(err) throw err;
-                res.cookie('token', token).json(user)
-            })
-        }
-        if(!match)  {
-            res.json({
-                error: 'Password do not match'
-            })
-        }
-    } catch (error) {
-        console.log(error)
+    // Check if user exists
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.json({
+        error: "No user found",
+      });
     }
-}
 
-const getProfile = (req, res) => {
-  const {token} = req.cookies
-  if(token)  {
-      jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
-          if(err) throw err;
-          res.json(user)
-      })
-  } else {
-      res.json(null)
+    //Check if passwords match
+    const match = await comparePassword(password, user.password);
+    if (match) {
+      jwt.sign(
+        { email: user.email, id: user._id, name: user.name },
+        process.env.JWT_SECRET,
+        {},
+        (err, token) => {
+          if (err) throw err;
+          res.cookie("token", token).json(user);
+        }
+      );
+    }
+    if (!match) {
+      res.json({
+        error: "Password do not match",
+      });
+    }
+  } catch (error) {
+    console.log(error);
   }
-  }
-
-  // Logout endpoint
-const logoutUser = (req, res) => {
-  // Här kan du utföra de nödvändiga åtgärderna för att logga ut användaren, till exempel:
-  // - Rensa användarens sessionsdata
-  // - Återställ autentiseringsstatus
-  // - Ta bort JWT-tokenet från användarens cookie (om du använder JWT för autentisering)
-
-  // Exempel: Ta bort JWT-tokenet från användarens cookie
-  res.clearCookie('token');
-
-  // Omdirigera användaren till startsidan eller någon annan sida
-  res.redirect('/logout');
 };
 
+const getProfile = (req, res) => {
+  const { token } = req.cookies;
+  if (token) {
+    jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
+      if (err) throw err;
+      res.json(user);
+    });
+  } else {
+    res.json(null);
+  }
+};
+
+// Logout endpoint
+const logoutUser = (req, res) => {
+  res.clearCookie("token");
+
+  res.redirect("/logout");
+};
 
 module.exports = {
   test,
